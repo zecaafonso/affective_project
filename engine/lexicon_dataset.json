@@ -1,0 +1,3737 @@
+{
+  "terrible": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "horrible": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "awful": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "unacceptable": {
+    "valence": -0.85,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "furious": {
+    "valence": -0.9,
+    "activity": 0.9,
+    "label": "anger"
+  },
+  "angry": {
+    "valence": -0.8,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "mad": {
+    "valence": -0.75,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "outrageous": {
+    "valence": -0.85,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "scam": {
+    "valence": -0.95,
+    "activity": 0.9,
+    "label": "anger"
+  },
+  "fraud": {
+    "valence": -0.95,
+    "activity": 0.9,
+    "label": "anger"
+  },
+  "rip-off": {
+    "valence": -0.9,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "ripoff": {
+    "valence": -0.9,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "stolen": {
+    "valence": -0.9,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "steal": {
+    "valence": -0.9,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "thieves": {
+    "valence": -0.9,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "liar": {
+    "valence": -0.85,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "liars": {
+    "valence": -0.85,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "lying": {
+    "valence": -0.8,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "lied": {
+    "valence": -0.8,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "ridiculous": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "absurd": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "pathetic": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "useless": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "worthless": {
+    "valence": -0.8,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "garbage": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "trash": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "junk": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "crap": {
+    "valence": -0.8,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "shit": {
+    "valence": -0.85,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "hell": {
+    "valence": -0.7,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "damn": {
+    "valence": -0.65,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "wtf": {
+    "valence": -0.8,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "hate": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "hated": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "disgusting": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "worst": {
+    "valence": -0.9,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "sue": {
+    "valence": -0.9,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "lawyer": {
+    "valence": -0.8,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "legal": {
+    "valence": -0.6,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "police": {
+    "valence": -0.8,
+    "activity": 0.85,
+    "label": "anger"
+  },
+  "report": {
+    "valence": -0.5,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "complaint": {
+    "valence": -0.65,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "complain": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "anger"
+  },
+  "complaining": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "anger"
+  },
+  "demand": {
+    "valence": -0.65,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "immediately": {
+    "valence": -0.4,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "asap": {
+    "valence": -0.35,
+    "activity": 0.75,
+    "label": "fear"
+  },
+  "urgent": {
+    "valence": -0.45,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "urgently": {
+    "valence": -0.45,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "emergency": {
+    "valence": -0.6,
+    "activity": 0.9,
+    "label": "fear"
+  },
+  "escalate": {
+    "valence": -0.6,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "manager": {
+    "valence": -0.5,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "supervisor": {
+    "valence": -0.5,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "human": {
+    "valence": -0.3,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "agent": {
+    "valence": -0.25,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "representative": {
+    "valence": -0.25,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "bot": {
+    "valence": -0.45,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "robot": {
+    "valence": -0.4,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "stupid": {
+    "valence": -0.8,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "idiot": {
+    "valence": -0.85,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "idiots": {
+    "valence": -0.85,
+    "activity": 0.8,
+    "label": "anger"
+  },
+  "incompetent": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "incompetence": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "joke": {
+    "valence": -0.65,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "clowns": {
+    "valence": -0.8,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "nightmare": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "disaster": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "ruined": {
+    "valence": -0.8,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "ruin": {
+    "valence": -0.8,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "exploded": {
+    "valence": -0.85,
+    "activity": 0.9,
+    "label": "fear"
+  },
+  "burning": {
+    "valence": -0.85,
+    "activity": 0.9,
+    "label": "fear"
+  },
+  "fire": {
+    "valence": -0.85,
+    "activity": 0.9,
+    "label": "fear"
+  },
+  "smoke": {
+    "valence": -0.75,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "sparks": {
+    "valence": -0.8,
+    "activity": 0.85,
+    "label": "fear"
+  },
+  "shock": {
+    "valence": -0.75,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "dangerous": {
+    "valence": -0.8,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "hazard": {
+    "valence": -0.8,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "unsafe": {
+    "valence": -0.8,
+    "activity": 0.75,
+    "label": "fear"
+  },
+  "frustrated": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "frustrating": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "frustration": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "annoyed": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "annoying": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "irritated": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "irritating": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "tired": {
+    "valence": -0.5,
+    "activity": -0.45,
+    "label": "sadness"
+  },
+  "sick": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "fed": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "waiting": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "wait": {
+    "valence": -0.4,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "waited": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "delay": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "delayed": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "delays": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "late": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "overdue": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "slow": {
+    "valence": -0.5,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "slower": {
+    "valence": -0.5,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "slowest": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "forever": {
+    "valence": -0.55,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "stuck": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "lost": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "missing": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "missed": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "never": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "nothing": {
+    "valence": -0.5,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "nobody": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "nowhere": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "broken": {
+    "valence": -0.75,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "broke": {
+    "valence": -0.75,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "damaged": {
+    "valence": -0.75,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "damage": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "defective": {
+    "valence": -0.75,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "defect": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "faulty": {
+    "valence": -0.75,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "malfunction": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "malfunctioning": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "cracked": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "scratched": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "dented": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "dead": {
+    "valence": -0.75,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "crash": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "crashes": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "crashing": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "freeze": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "freezes": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "freezing": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "frozen": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "glitch": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "glitches": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "bug": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "bugs": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "buggy": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "error": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "errors": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "fail": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "failed": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "failing": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "failure": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "problem": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "problems": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "issue": {
+    "valence": -0.5,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "issues": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "trouble": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "wrong": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "incorrect": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "mistake": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "mistakes": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "bad": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "worse": {
+    "valence": -0.65,
+    "activity": 0.2,
+    "label": "sadness"
+  },
+  "poor": {
+    "valence": -0.65,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "poorly": {
+    "valence": -0.65,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "terribly": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "horribly": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "badly": {
+    "valence": -0.65,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "unhelpful": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "unresponsive": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "ignored": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "ignoring": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "ignore": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "refuse": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "refused": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "refusing": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "reject": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "rejected": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "denied": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "deny": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "cancel": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "cancelled": {
+    "valence": -0.5,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "canceled": {
+    "valence": -0.5,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "refund": {
+    "valence": -0.4,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "return": {
+    "valence": -0.35,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "replace": {
+    "valence": -0.4,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "replacement": {
+    "valence": -0.4,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "overcharged": {
+    "valence": -0.75,
+    "activity": 0.65,
+    "label": "frustration"
+  },
+  "overcharge": {
+    "valence": -0.75,
+    "activity": 0.65,
+    "label": "frustration"
+  },
+  "charged": {
+    "valence": -0.45,
+    "activity": 0.5,
+    "label": "fear"
+  },
+  "twice": {
+    "valence": -0.55,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "duplicate": {
+    "valence": -0.5,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "expensive": {
+    "valence": -0.45,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "overpriced": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "waste": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "wasted": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "wasting": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "mess": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "messy": {
+    "valence": -0.55,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "chaotic": {
+    "valence": -0.65,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "confusing": {
+    "valence": -0.5,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "confused": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "fear"
+  },
+  "confusion": {
+    "valence": -0.5,
+    "activity": 0.45,
+    "label": "fear"
+  },
+  "complicated": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "difficult": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "hard": {
+    "valence": -0.4,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "impossible": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "frustration"
+  },
+  "unable": {
+    "valence": -0.5,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "cannot": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "cant": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "wont": {
+    "valence": -0.5,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "doesnt": {
+    "valence": -0.5,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "didnt": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "stopped": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "stop": {
+    "valence": -0.5,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "disconnect": {
+    "valence": -0.5,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "disconnected": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "offline": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "unreliable": {
+    "valence": -0.65,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "inconsistent": {
+    "valence": -0.55,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "fake": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "counterfeit": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "used": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "opened": {
+    "valence": -0.4,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "empty": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "incomplete": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "expired": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "invalid": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "declined": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "fear"
+  },
+  "disappointed": {
+    "valence": -0.65,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "disappointing": {
+    "valence": -0.65,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "disappointment": {
+    "valence": -0.65,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "sad": {
+    "valence": -0.7,
+    "activity": -0.4,
+    "label": "sadness"
+  },
+  "sadly": {
+    "valence": -0.6,
+    "activity": -0.35,
+    "label": "sadness"
+  },
+  "unhappy": {
+    "valence": -0.65,
+    "activity": 0.35,
+    "label": "sadness"
+  },
+  "upset": {
+    "valence": -0.65,
+    "activity": 0.25,
+    "label": "sadness"
+  },
+  "letdown": {
+    "valence": -0.6,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "regret": {
+    "valence": -0.6,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "regretting": {
+    "valence": -0.6,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "sorry": {
+    "valence": -0.4,
+    "activity": -0.2,
+    "label": "sadness"
+  },
+  "unfortunate": {
+    "valence": -0.55,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "unfortunately": {
+    "valence": -0.5,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "miss": {
+    "valence": -0.45,
+    "activity": -0.2,
+    "label": "sadness"
+  },
+  "hopeless": {
+    "valence": -0.75,
+    "activity": -0.45,
+    "label": "sadness"
+  },
+  "helpless": {
+    "valence": -0.7,
+    "activity": -0.35,
+    "label": "sadness"
+  },
+  "depressed": {
+    "valence": -0.8,
+    "activity": -0.5,
+    "label": "sadness"
+  },
+  "miserable": {
+    "valence": -0.8,
+    "activity": -0.4,
+    "label": "sadness"
+  },
+  "crying": {
+    "valence": -0.75,
+    "activity": 0.2,
+    "label": "sadness"
+  },
+  "heartbroken": {
+    "valence": -0.8,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "shame": {
+    "valence": -0.6,
+    "activity": -0.2,
+    "label": "sadness"
+  },
+  "shameful": {
+    "valence": -0.65,
+    "activity": 0.2,
+    "label": "sadness"
+  },
+  "pity": {
+    "valence": -0.5,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "down": {
+    "valence": -0.45,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "lonely": {
+    "valence": -0.65,
+    "activity": -0.45,
+    "label": "sadness"
+  },
+  "abandoned": {
+    "valence": -0.75,
+    "activity": -0.3,
+    "label": "sadness"
+  },
+  "neglected": {
+    "valence": -0.65,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "loyal": {
+    "valence": 0.3,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "trusted": {
+    "valence": 0.35,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "expected": {
+    "valence": -0.3,
+    "activity": -0.1,
+    "label": "sadness"
+  },
+  "worried": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "fear"
+  },
+  "worry": {
+    "valence": -0.55,
+    "activity": 0.5,
+    "label": "fear"
+  },
+  "worrying": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "fear"
+  },
+  "anxious": {
+    "valence": -0.65,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "anxiety": {
+    "valence": -0.65,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "nervous": {
+    "valence": -0.55,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "scared": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "fear"
+  },
+  "afraid": {
+    "valence": -0.7,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "fear": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "fear"
+  },
+  "panic": {
+    "valence": -0.8,
+    "activity": 0.85,
+    "label": "fear"
+  },
+  "panicking": {
+    "valence": -0.8,
+    "activity": 0.85,
+    "label": "fear"
+  },
+  "terrified": {
+    "valence": -0.85,
+    "activity": 0.85,
+    "label": "fear"
+  },
+  "desperate": {
+    "valence": -0.75,
+    "activity": 0.75,
+    "label": "fear"
+  },
+  "desperately": {
+    "valence": -0.75,
+    "activity": 0.75,
+    "label": "fear"
+  },
+  "stressed": {
+    "valence": -0.65,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "stress": {
+    "valence": -0.6,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "stressful": {
+    "valence": -0.6,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "overwhelmed": {
+    "valence": -0.65,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "concerned": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "fear"
+  },
+  "concern": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "fear"
+  },
+  "unsure": {
+    "valence": -0.3,
+    "activity": 0.2,
+    "label": "fear"
+  },
+  "uncertain": {
+    "valence": -0.35,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "doubt": {
+    "valence": -0.4,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "suspicious": {
+    "valence": -0.55,
+    "activity": 0.5,
+    "label": "fear"
+  },
+  "hacked": {
+    "valence": -0.85,
+    "activity": 0.85,
+    "label": "fear"
+  },
+  "hacker": {
+    "valence": -0.85,
+    "activity": 0.85,
+    "label": "fear"
+  },
+  "breach": {
+    "valence": -0.8,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "unauthorized": {
+    "valence": -0.8,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "compromised": {
+    "valence": -0.8,
+    "activity": 0.75,
+    "label": "fear"
+  },
+  "virus": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "fear"
+  },
+  "malware": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "fear"
+  },
+  "risk": {
+    "valence": -0.5,
+    "activity": 0.5,
+    "label": "fear"
+  },
+  "risky": {
+    "valence": -0.5,
+    "activity": 0.5,
+    "label": "fear"
+  },
+  "deadline": {
+    "valence": -0.45,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "birthday": {
+    "valence": 0.4,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "gift": {
+    "valence": 0.45,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "present": {
+    "valence": 0.4,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "help": {
+    "valence": -0.25,
+    "activity": 0.45,
+    "label": "fear"
+  },
+  "please": {
+    "valence": -0.15,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "great": {
+    "valence": 0.75,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "awesome": {
+    "valence": 0.85,
+    "activity": 0.7,
+    "label": "joy"
+  },
+  "amazing": {
+    "valence": 0.85,
+    "activity": 0.7,
+    "label": "joy"
+  },
+  "fantastic": {
+    "valence": 0.85,
+    "activity": 0.7,
+    "label": "joy"
+  },
+  "wonderful": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "excellent": {
+    "valence": 0.85,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "outstanding": {
+    "valence": 0.85,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "superb": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "brilliant": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "perfect": {
+    "valence": 0.85,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "perfectly": {
+    "valence": 0.8,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "love": {
+    "valence": 0.85,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "loved": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "loving": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "happy": {
+    "valence": 0.8,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "happier": {
+    "valence": 0.8,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "happiest": {
+    "valence": 0.85,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "glad": {
+    "valence": 0.7,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "pleased": {
+    "valence": 0.7,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "delighted": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "thrilled": {
+    "valence": 0.85,
+    "activity": 0.75,
+    "label": "joy"
+  },
+  "excited": {
+    "valence": 0.8,
+    "activity": 0.75,
+    "label": "joy"
+  },
+  "exciting": {
+    "valence": 0.75,
+    "activity": 0.7,
+    "label": "joy"
+  },
+  "yay": {
+    "valence": 0.8,
+    "activity": 0.75,
+    "label": "joy"
+  },
+  "woohoo": {
+    "valence": 0.85,
+    "activity": 0.8,
+    "label": "joy"
+  },
+  "best": {
+    "valence": 0.8,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "favorite": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "favourite": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "impressed": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "impressive": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "incredible": {
+    "valence": 0.8,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "phenomenal": {
+    "valence": 0.85,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "fabulous": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "marvelous": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "spectacular": {
+    "valence": 0.8,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "flawless": {
+    "valence": 0.85,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "flawlessly": {
+    "valence": 0.8,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "seamless": {
+    "valence": 0.75,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "seamlessly": {
+    "valence": 0.75,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "fast": {
+    "valence": 0.6,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "faster": {
+    "valence": 0.6,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "fastest": {
+    "valence": 0.65,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "quick": {
+    "valence": 0.6,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "quickly": {
+    "valence": 0.6,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "speedy": {
+    "valence": 0.65,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "prompt": {
+    "valence": 0.6,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "promptly": {
+    "valence": 0.6,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "efficient": {
+    "valence": 0.65,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "efficiently": {
+    "valence": 0.65,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "helpful": {
+    "valence": 0.7,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "kind": {
+    "valence": 0.7,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "friendly": {
+    "valence": 0.7,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "polite": {
+    "valence": 0.65,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "courteous": {
+    "valence": 0.65,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "professional": {
+    "valence": 0.65,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "responsive": {
+    "valence": 0.65,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "reliable": {
+    "valence": 0.65,
+    "activity": 0.25,
+    "label": "calm"
+  },
+  "recommend": {
+    "valence": 0.7,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "recommended": {
+    "valence": 0.7,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "thanks": {
+    "valence": 0.7,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "thank": {
+    "valence": 0.7,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "thankful": {
+    "valence": 0.75,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "grateful": {
+    "valence": 0.75,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "appreciate": {
+    "valence": 0.75,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "appreciated": {
+    "valence": 0.75,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "appreciation": {
+    "valence": 0.75,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "cheers": {
+    "valence": 0.65,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "kudos": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "bravo": {
+    "valence": 0.8,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "congrats": {
+    "valence": 0.75,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "congratulations": {
+    "valence": 0.75,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "celebrate": {
+    "valence": 0.75,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "win": {
+    "valence": 0.7,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "winner": {
+    "valence": 0.75,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "success": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "successful": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "successfully": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "works": {
+    "valence": 0.55,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "working": {
+    "valence": 0.5,
+    "activity": 0.25,
+    "label": "joy"
+  },
+  "fixed": {
+    "valence": 0.65,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "solved": {
+    "valence": 0.7,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "resolved": {
+    "valence": 0.7,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "solution": {
+    "valence": 0.55,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "enjoy": {
+    "valence": 0.7,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "enjoying": {
+    "valence": 0.7,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "enjoyed": {
+    "valence": 0.7,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "smile": {
+    "valence": 0.7,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "smiling": {
+    "valence": 0.7,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "laugh": {
+    "valence": 0.75,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "fun": {
+    "valence": 0.7,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "cool": {
+    "valence": 0.6,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "nice": {
+    "valence": 0.6,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "lovely": {
+    "valence": 0.75,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "sweet": {
+    "valence": 0.65,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "beautiful": {
+    "valence": 0.75,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "sleek": {
+    "valence": 0.6,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "clean": {
+    "valence": 0.55,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "fresh": {
+    "valence": 0.55,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "upgrade": {
+    "valence": 0.55,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "upgraded": {
+    "valence": 0.6,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "bonus": {
+    "valence": 0.65,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "discount": {
+    "valence": 0.6,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "free": {
+    "valence": 0.55,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "save": {
+    "valence": 0.5,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "saved": {
+    "valence": 0.6,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "worth": {
+    "valence": 0.55,
+    "activity": 0.25,
+    "label": "joy"
+  },
+  "valuable": {
+    "valence": 0.6,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "legit": {
+    "valence": 0.6,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "authentic": {
+    "valence": 0.6,
+    "activity": 0.25,
+    "label": "calm"
+  },
+  "genuine": {
+    "valence": 0.6,
+    "activity": 0.25,
+    "label": "calm"
+  },
+  "accurate": {
+    "valence": 0.6,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "exact": {
+    "valence": 0.5,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "exactly": {
+    "valence": 0.5,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "calm": {
+    "valence": 0.55,
+    "activity": -0.5,
+    "label": "calm"
+  },
+  "calmly": {
+    "valence": 0.55,
+    "activity": -0.5,
+    "label": "calm"
+  },
+  "peace": {
+    "valence": 0.65,
+    "activity": -0.55,
+    "label": "calm"
+  },
+  "peaceful": {
+    "valence": 0.65,
+    "activity": -0.55,
+    "label": "calm"
+  },
+  "relax": {
+    "valence": 0.6,
+    "activity": -0.5,
+    "label": "calm"
+  },
+  "relaxed": {
+    "valence": 0.65,
+    "activity": -0.55,
+    "label": "calm"
+  },
+  "relaxing": {
+    "valence": 0.6,
+    "activity": -0.5,
+    "label": "calm"
+  },
+  "relief": {
+    "valence": 0.65,
+    "activity": -0.35,
+    "label": "calm"
+  },
+  "relieved": {
+    "valence": 0.7,
+    "activity": -0.35,
+    "label": "calm"
+  },
+  "satisfied": {
+    "valence": 0.7,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "satisfactory": {
+    "valence": 0.55,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "satisfaction": {
+    "valence": 0.7,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "content": {
+    "valence": 0.6,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "comfortable": {
+    "valence": 0.6,
+    "activity": -0.35,
+    "label": "calm"
+  },
+  "smooth": {
+    "valence": 0.65,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "smoothly": {
+    "valence": 0.65,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "easy": {
+    "valence": 0.6,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "easily": {
+    "valence": 0.6,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "effortless": {
+    "valence": 0.65,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "simple": {
+    "valence": 0.5,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "clear": {
+    "valence": 0.55,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "clearly": {
+    "valence": 0.55,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "understand": {
+    "valence": 0.45,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "understood": {
+    "valence": 0.5,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "patient": {
+    "valence": 0.5,
+    "activity": -0.35,
+    "label": "calm"
+  },
+  "patiently": {
+    "valence": 0.5,
+    "activity": -0.35,
+    "label": "calm"
+  },
+  "fine": {
+    "valence": 0.35,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "good": {
+    "valence": 0.6,
+    "activity": 0.15,
+    "label": "calm"
+  },
+  "well": {
+    "valence": 0.5,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "okay": {
+    "valence": 0.25,
+    "activity": -0.3,
+    "label": "neutral"
+  },
+  "ok": {
+    "valence": 0.25,
+    "activity": -0.3,
+    "label": "neutral"
+  },
+  "alright": {
+    "valence": 0.3,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "sure": {
+    "valence": 0.3,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "agree": {
+    "valence": 0.45,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "agreed": {
+    "valence": 0.45,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "safe": {
+    "valence": 0.6,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "safely": {
+    "valence": 0.6,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "secure": {
+    "valence": 0.6,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "securely": {
+    "valence": 0.6,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "steady": {
+    "valence": 0.45,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "stable": {
+    "valence": 0.5,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "balanced": {
+    "valence": 0.5,
+    "activity": -0.3,
+    "label": "calm"
+  },
+  "gentle": {
+    "valence": 0.55,
+    "activity": -0.4,
+    "label": "calm"
+  },
+  "quiet": {
+    "valence": 0.4,
+    "activity": -0.5,
+    "label": "calm"
+  },
+  "soft": {
+    "valence": 0.45,
+    "activity": -0.4,
+    "label": "calm"
+  },
+  "warm": {
+    "valence": 0.55,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "welcome": {
+    "valence": 0.55,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "hello": {
+    "valence": 0.3,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "hi": {
+    "valence": 0.3,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "hey": {
+    "valence": 0.25,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "greetings": {
+    "valence": 0.35,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "goodbye": {
+    "valence": 0.3,
+    "activity": -0.15,
+    "label": "neutral"
+  },
+  "bye": {
+    "valence": 0.3,
+    "activity": -0.15,
+    "label": "neutral"
+  },
+  "regards": {
+    "valence": 0.35,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "sincerely": {
+    "valence": 0.35,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "order": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "package": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "parcel": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "delivery": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "shipping": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "shipped": {
+    "valence": 0.1,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "tracking": {
+    "valence": 0.0,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "courier": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "address": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "invoice": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "receipt": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "payment": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "card": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "account": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "password": {
+    "valence": -0.1,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "login": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "warranty": {
+    "valence": 0.1,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "guarantee": {
+    "valence": 0.2,
+    "activity": 0.05,
+    "label": "calm"
+  },
+  "manual": {
+    "valence": 0.0,
+    "activity": -0.1,
+    "label": "neutral"
+  },
+  "instructions": {
+    "valence": 0.0,
+    "activity": -0.05,
+    "label": "neutral"
+  },
+  "screen": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "battery": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "charger": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "cable": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "laptop": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "phone": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "headphones": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "monitor": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "keyboard": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "mouse": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "tablet": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "camera": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "speaker": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "device": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "product": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "item": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "price": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "cost": {
+    "valence": -0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "stock": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "available": {
+    "valence": 0.15,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "unavailable": {
+    "valence": -0.35,
+    "activity": 0.25,
+    "label": "frustration"
+  },
+  "sold": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "buy": {
+    "valence": 0.1,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "bought": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "purchase": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "purchased": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "store": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "shop": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "website": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "app": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "support": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "service": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "question": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "info": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "information": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "details": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "check": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "status": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "update": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "today": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "tomorrow": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "yesterday": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "week": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "weeks": {
+    "valence": -0.2,
+    "activity": 0.2,
+    "label": "frustration"
+  },
+  "month": {
+    "valence": -0.15,
+    "activity": 0.15,
+    "label": "frustration"
+  },
+  "months": {
+    "valence": -0.3,
+    "activity": 0.25,
+    "label": "frustration"
+  },
+  "hours": {
+    "valence": -0.15,
+    "activity": 0.2,
+    "label": "frustration"
+  },
+  "days": {
+    "valence": -0.1,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "maybe": {
+    "valence": -0.1,
+    "activity": -0.1,
+    "label": "neutral"
+  },
+  "perhaps": {
+    "valence": -0.05,
+    "activity": -0.1,
+    "label": "neutral"
+  },
+  "weird": {
+    "valence": -0.4,
+    "activity": 0.3,
+    "label": "frustration"
+  },
+  "strange": {
+    "valence": -0.35,
+    "activity": 0.25,
+    "label": "frustration"
+  },
+  "odd": {
+    "valence": -0.3,
+    "activity": 0.2,
+    "label": "frustration"
+  },
+  "average": {
+    "valence": 0.0,
+    "activity": -0.2,
+    "label": "neutral"
+  },
+  "mediocre": {
+    "valence": -0.45,
+    "activity": -0.2,
+    "label": "sadness"
+  },
+  "decent": {
+    "valence": 0.35,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "acceptable": {
+    "valence": 0.25,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "reasonable": {
+    "valence": 0.4,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "fair": {
+    "valence": 0.4,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "unfair": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "dishonest": {
+    "valence": -0.8,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "rude": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "rudely": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "arrogant": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "disrespectful": {
+    "valence": -0.8,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "apology": {
+    "valence": 0.25,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "apologize": {
+    "valence": 0.25,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "compensate": {
+    "valence": -0.35,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "compensation": {
+    "valence": -0.35,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "voucher": {
+    "valence": 0.2,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "coupon": {
+    "valence": 0.25,
+    "activity": 0.15,
+    "label": "joy"
+  },
+  "promo": {
+    "valence": 0.2,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "glitchy": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "lag": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "lagging": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "laggy": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "overheating": {
+    "valence": -0.7,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "overheat": {
+    "valence": -0.7,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "hot": {
+    "valence": -0.4,
+    "activity": 0.45,
+    "label": "fear"
+  },
+  "loud": {
+    "valence": -0.45,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "noisy": {
+    "valence": -0.45,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "silent": {
+    "valence": 0.2,
+    "activity": -0.4,
+    "label": "calm"
+  },
+  "quietly": {
+    "valence": 0.25,
+    "activity": -0.45,
+    "label": "calm"
+  },
+  "heavy": {
+    "valence": -0.15,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "lightweight": {
+    "valence": 0.45,
+    "activity": 0.15,
+    "label": "joy"
+  },
+  "durable": {
+    "valence": 0.6,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "fragile": {
+    "valence": -0.4,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "cheap": {
+    "valence": -0.35,
+    "activity": 0.2,
+    "label": "frustration"
+  },
+  "flimsy": {
+    "valence": -0.6,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "sturdy": {
+    "valence": 0.6,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "solid": {
+    "valence": 0.55,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "modern": {
+    "valence": 0.45,
+    "activity": 0.2,
+    "label": "joy"
+  },
+  "outdated": {
+    "valence": -0.5,
+    "activity": 0.25,
+    "label": "frustration"
+  },
+  "obsolete": {
+    "valence": -0.55,
+    "activity": 0.25,
+    "label": "sadness"
+  },
+  "compatible": {
+    "valence": 0.45,
+    "activity": 0.1,
+    "label": "calm"
+  },
+  "incompatible": {
+    "valence": -0.6,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "connect": {
+    "valence": 0.2,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "connected": {
+    "valence": 0.35,
+    "activity": 0.1,
+    "label": "calm"
+  },
+  "bluetooth": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "wifi": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "signal": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "weak": {
+    "valence": -0.45,
+    "activity": -0.15,
+    "label": "frustration"
+  },
+  "strong": {
+    "valence": 0.5,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "bright": {
+    "valence": 0.45,
+    "activity": 0.25,
+    "label": "joy"
+  },
+  "dim": {
+    "valence": -0.35,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "blurry": {
+    "valence": -0.55,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "sharp": {
+    "valence": 0.5,
+    "activity": 0.2,
+    "label": "joy"
+  },
+  "crisp": {
+    "valence": 0.55,
+    "activity": 0.25,
+    "label": "joy"
+  },
+  "distorted": {
+    "valence": -0.6,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "unusable": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "uselessly": {
+    "valence": -0.75,
+    "activity": 0.55,
+    "label": "anger"
+  },
+  "pointless": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "annoyance": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "hassle": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "inconvenience": {
+    "valence": -0.55,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "inconvenient": {
+    "valence": -0.55,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "convenient": {
+    "valence": 0.6,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "convenience": {
+    "valence": 0.55,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "unsatisfied": {
+    "valence": -0.65,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "dissatisfied": {
+    "valence": -0.7,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "pleasure": {
+    "valence": 0.75,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "delight": {
+    "valence": 0.8,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "delightful": {
+    "valence": 0.8,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "cheerful": {
+    "valence": 0.75,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "optimistic": {
+    "valence": 0.65,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "hopeful": {
+    "valence": 0.55,
+    "activity": 0.25,
+    "label": "calm"
+  },
+  "confident": {
+    "valence": 0.65,
+    "activity": 0.3,
+    "label": "calm"
+  },
+  "assured": {
+    "valence": 0.6,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "reassured": {
+    "valence": 0.65,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "trust": {
+    "valence": 0.6,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "trustworthy": {
+    "valence": 0.7,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "untrustworthy": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "sketchy": {
+    "valence": -0.65,
+    "activity": 0.55,
+    "label": "fear"
+  },
+  "shady": {
+    "valence": -0.7,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "beware": {
+    "valence": -0.75,
+    "activity": 0.7,
+    "label": "fear"
+  },
+  "warning": {
+    "valence": -0.6,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "alert": {
+    "valence": -0.45,
+    "activity": 0.65,
+    "label": "fear"
+  },
+  "careful": {
+    "valence": -0.25,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "careless": {
+    "valence": -0.65,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "negligent": {
+    "valence": -0.75,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "dreadful": {
+    "valence": -0.8,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "atrocious": {
+    "valence": -0.85,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "abysmal": {
+    "valence": -0.85,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "appalling": {
+    "valence": -0.85,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "shocking": {
+    "valence": -0.75,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "unbelievable": {
+    "valence": -0.7,
+    "activity": 0.75,
+    "label": "anger"
+  },
+  "unheard": {
+    "valence": -0.6,
+    "activity": 0.55,
+    "label": "anger"
+  },
+  "bizarre": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "crazy": {
+    "valence": -0.5,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "insane": {
+    "valence": -0.55,
+    "activity": 0.7,
+    "label": "anger"
+  },
+  "nuts": {
+    "valence": -0.5,
+    "activity": 0.6,
+    "label": "anger"
+  },
+  "absurdly": {
+    "valence": -0.7,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "totally": {
+    "valence": 0.0,
+    "activity": 0.3,
+    "label": "neutral"
+  },
+  "completely": {
+    "valence": 0.0,
+    "activity": 0.3,
+    "label": "neutral"
+  },
+  "absolutely": {
+    "valence": 0.1,
+    "activity": 0.35,
+    "label": "neutral"
+  },
+  "definitely": {
+    "valence": 0.1,
+    "activity": 0.25,
+    "label": "neutral"
+  },
+  "certainly": {
+    "valence": 0.15,
+    "activity": 0.2,
+    "label": "neutral"
+  },
+  "probably": {
+    "valence": 0.0,
+    "activity": -0.05,
+    "label": "neutral"
+  },
+  "possibly": {
+    "valence": 0.0,
+    "activity": -0.05,
+    "label": "neutral"
+  },
+  "barely": {
+    "valence": -0.35,
+    "activity": 0.15,
+    "label": "frustration"
+  },
+  "hardly": {
+    "valence": -0.35,
+    "activity": 0.15,
+    "label": "frustration"
+  },
+  "almost": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "finally": {
+    "valence": 0.25,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "already": {
+    "valence": -0.2,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "still": {
+    "valence": -0.25,
+    "activity": 0.3,
+    "label": "frustration"
+  },
+  "yet": {
+    "valence": -0.2,
+    "activity": 0.25,
+    "label": "frustration"
+  },
+  "again": {
+    "valence": -0.35,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "anymore": {
+    "valence": -0.45,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "enough": {
+    "valence": -0.55,
+    "activity": 0.55,
+    "label": "anger"
+  },
+  "quit": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "give": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "take": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "send": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "sent": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "receive": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "received": {
+    "valence": 0.1,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "arrive": {
+    "valence": 0.1,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "arrived": {
+    "valence": 0.15,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "arriving": {
+    "valence": 0.1,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "deliver": {
+    "valence": 0.05,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "delivered": {
+    "valence": 0.15,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "open": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "close": {
+    "valence": 0.0,
+    "activity": -0.1,
+    "label": "neutral"
+  },
+  "closed": {
+    "valence": -0.15,
+    "activity": -0.1,
+    "label": "neutral"
+  },
+  "fix": {
+    "valence": 0.2,
+    "activity": 0.25,
+    "label": "neutral"
+  },
+  "repair": {
+    "valence": 0.1,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "repaired": {
+    "valence": 0.45,
+    "activity": 0.2,
+    "label": "joy"
+  },
+  "shattered": {
+    "valence": -0.8,
+    "activity": 0.65,
+    "label": "anger"
+  },
+  "snapped": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "bent": {
+    "valence": -0.55,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "loose": {
+    "valence": -0.45,
+    "activity": 0.3,
+    "label": "frustration"
+  },
+  "tight": {
+    "valence": -0.2,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "found": {
+    "valence": 0.5,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "find": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "search": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "looking": {
+    "valence": 0.0,
+    "activity": 0.1,
+    "label": "neutral"
+  },
+  "need": {
+    "valence": -0.15,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "want": {
+    "valence": 0.0,
+    "activity": 0.2,
+    "label": "neutral"
+  },
+  "wish": {
+    "valence": 0.1,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "hope": {
+    "valence": 0.25,
+    "activity": 0.1,
+    "label": "calm"
+  },
+  "hoping": {
+    "valence": 0.2,
+    "activity": 0.1,
+    "label": "calm"
+  },
+  "thankyou": {
+    "valence": 0.75,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "thx": {
+    "valence": 0.65,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "ty": {
+    "valence": 0.65,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "pls": {
+    "valence": -0.15,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "plz": {
+    "valence": -0.15,
+    "activity": 0.3,
+    "label": "fear"
+  },
+  "omg": {
+    "valence": -0.2,
+    "activity": 0.8,
+    "label": "fear"
+  },
+  "wow": {
+    "valence": 0.5,
+    "activity": 0.7,
+    "label": "joy"
+  },
+  "ugh": {
+    "valence": -0.6,
+    "activity": 0.5,
+    "label": "frustration"
+  },
+  "argh": {
+    "valence": -0.7,
+    "activity": 0.65,
+    "label": "frustration"
+  },
+  "sigh": {
+    "valence": -0.45,
+    "activity": -0.35,
+    "label": "sadness"
+  },
+  "meh": {
+    "valence": -0.25,
+    "activity": -0.4,
+    "label": "sadness"
+  },
+  "hooray": {
+    "valence": 0.85,
+    "activity": 0.75,
+    "label": "joy"
+  },
+  "praise": {
+    "valence": 0.75,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "compliment": {
+    "valence": 0.75,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "shoutout": {
+    "valence": 0.7,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "five": {
+    "valence": 0.3,
+    "activity": 0.1,
+    "label": "joy"
+  },
+  "stars": {
+    "valence": 0.4,
+    "activity": 0.2,
+    "label": "joy"
+  },
+  "star": {
+    "valence": 0.35,
+    "activity": 0.15,
+    "label": "joy"
+  },
+  "zero": {
+    "valence": -0.5,
+    "activity": 0.3,
+    "label": "frustration"
+  },
+  "one": {
+    "valence": 0.0,
+    "activity": 0.0,
+    "label": "neutral"
+  },
+  "refunded": {
+    "valence": 0.35,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "reimbursed": {
+    "valence": 0.4,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "reimbursement": {
+    "valence": 0.1,
+    "activity": 0.15,
+    "label": "neutral"
+  },
+  "credited": {
+    "valence": 0.35,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "credit": {
+    "valence": 0.2,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "debit": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "bank": {
+    "valence": 0.0,
+    "activity": 0.05,
+    "label": "neutral"
+  },
+  "fee": {
+    "valence": -0.4,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "fees": {
+    "valence": -0.45,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "hidden": {
+    "valence": -0.55,
+    "activity": 0.45,
+    "label": "frustration"
+  },
+  "surprise": {
+    "valence": 0.2,
+    "activity": 0.6,
+    "label": "joy"
+  },
+  "surprised": {
+    "valence": 0.2,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "unexpected": {
+    "valence": -0.25,
+    "activity": 0.5,
+    "label": "fear"
+  },
+  "unwanted": {
+    "valence": -0.55,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "supportive": {
+    "valence": 0.7,
+    "activity": 0.3,
+    "label": "calm"
+  },
+  "understanding": {
+    "valence": 0.65,
+    "activity": -0.15,
+    "label": "calm"
+  },
+  "empathetic": {
+    "valence": 0.7,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "caring": {
+    "valence": 0.7,
+    "activity": -0.1,
+    "label": "calm"
+  },
+  "attentive": {
+    "valence": 0.65,
+    "activity": 0.15,
+    "label": "calm"
+  },
+  "thorough": {
+    "valence": 0.6,
+    "activity": 0.1,
+    "label": "calm"
+  },
+  "detailed": {
+    "valence": 0.45,
+    "activity": 0.05,
+    "label": "calm"
+  },
+  "dependable": {
+    "valence": 0.65,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "consistent": {
+    "valence": 0.55,
+    "activity": 0.1,
+    "label": "calm"
+  },
+  "superior": {
+    "valence": 0.75,
+    "activity": 0.45,
+    "label": "joy"
+  },
+  "inferior": {
+    "valence": -0.65,
+    "activity": 0.4,
+    "label": "frustration"
+  },
+  "top": {
+    "valence": 0.65,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "notch": {
+    "valence": 0.6,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "first-class": {
+    "valence": 0.8,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "world-class": {
+    "valence": 0.85,
+    "activity": 0.55,
+    "label": "joy"
+  },
+  "subpar": {
+    "valence": -0.6,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "underwhelming": {
+    "valence": -0.55,
+    "activity": -0.25,
+    "label": "sadness"
+  },
+  "overwhelming": {
+    "valence": -0.5,
+    "activity": 0.6,
+    "label": "fear"
+  },
+  "thrilling": {
+    "valence": 0.8,
+    "activity": 0.75,
+    "label": "joy"
+  },
+  "boring": {
+    "valence": -0.45,
+    "activity": -0.55,
+    "label": "sadness"
+  },
+  "bored": {
+    "valence": -0.45,
+    "activity": -0.55,
+    "label": "sadness"
+  },
+  "exhausted": {
+    "valence": -0.65,
+    "activity": -0.5,
+    "label": "sadness"
+  },
+  "exhausting": {
+    "valence": -0.65,
+    "activity": 0.3,
+    "label": "frustration"
+  },
+  "drained": {
+    "valence": -0.6,
+    "activity": -0.45,
+    "label": "sadness"
+  },
+  "energized": {
+    "valence": 0.7,
+    "activity": 0.65,
+    "label": "joy"
+  },
+  "motivated": {
+    "valence": 0.65,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "inspired": {
+    "valence": 0.7,
+    "activity": 0.5,
+    "label": "joy"
+  },
+  "creative": {
+    "valence": 0.6,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "innovative": {
+    "valence": 0.65,
+    "activity": 0.4,
+    "label": "joy"
+  },
+  "smart": {
+    "valence": 0.6,
+    "activity": 0.3,
+    "label": "joy"
+  },
+  "clever": {
+    "valence": 0.6,
+    "activity": 0.35,
+    "label": "joy"
+  },
+  "intuitive": {
+    "valence": 0.65,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "user-friendly": {
+    "valence": 0.7,
+    "activity": 0.2,
+    "label": "calm"
+  },
+  "clunky": {
+    "valence": -0.55,
+    "activity": 0.35,
+    "label": "frustration"
+  },
+  "awkward": {
+    "valence": -0.45,
+    "activity": 0.3,
+    "label": "frustration"
+  },
+  "painful": {
+    "valence": -0.7,
+    "activity": 0.55,
+    "label": "frustration"
+  },
+  "painless": {
+    "valence": 0.65,
+    "activity": -0.2,
+    "label": "calm"
+  },
+  "hassle-free": {
+    "valence": 0.7,
+    "activity": -0.25,
+    "label": "calm"
+  },
+  "stress-free": {
+    "valence": 0.7,
+    "activity": -0.35,
+    "label": "calm"
+  }
+}

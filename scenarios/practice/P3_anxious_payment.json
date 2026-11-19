@@ -1,0 +1,18 @@
+{
+  "id": "P3",
+  "title": "Anxious about a payment",
+  "company": "NovaShop (online electronics store)",
+  "description": "The customer is scared something went wrong with a payment.",
+  "expected_behavior": "Negative valence, higher activity, low dominance (fear rather than anger).",
+  "messages": [
+    {
+      "text": "I am worried my payment failed."
+    },
+    {
+      "text": "I am scared the money is gone and the order disappeared!"
+    },
+    {
+      "text": "Please help me, I do not know what to do."
+    }
+  ]
+}

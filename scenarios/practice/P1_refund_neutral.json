@@ -1,0 +1,18 @@
+{
+  "id": "P1",
+  "title": "Neutral refund request",
+  "company": "NovaShop (online electronics store)",
+  "description": "A polite refund question.",
+  "expected_behavior": "Neutral valence, answer normally.",
+  "messages": [
+    {
+      "text": "Hello, I would like to know how refunds work."
+    },
+    {
+      "text": "I bought a keyboard last week, can I return it?"
+    },
+    {
+      "text": "Understood, thanks."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-18 14:14:46
+Engine          : engine.engine.Engine
+Log file        : c:\Users\JoseAfonso\Desktop\affective_project\logs\session_20261118_141446.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[14:15:00] SCENARIO M2 - Frustration that grows over the conversation
+------------------------------------------------------------------------
+#1  14:15:00  source=scenario:M2
+INPUT      : Hi, my order 4821 has not arrived yet.
+MAP (x,y)   : valence=-0.01  activity=+0.12  dominance=n/a
+CONFIDENCE : 0.83
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 7, 'matched_words': 4, 'negation_used': 'yes'}
+------------------------------------------------------------------------
+#2  14:15:02  source=scenario:M2
+INPUT      : It was supposed to be here three days ago.
+MAP (x,y)   : valence=-0.10  activity=+0.10  dominance=n/a
+CONFIDENCE : 0.54
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 9, 'matched_words': 1, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#3  14:15:03  source=scenario:M2
+INPUT      : Nobody has answered my two emails. This is really frustrating.
+MAP (x,y)   : valence=-0.77  activity=+0.58  dominance=n/a
+CONFIDENCE : 0.63
+LABEL      : frustration
+ACTION     : ESCALATE
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 10, 'matched_words': 2, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#4  14:15:05  source=scenario:M2
+INPUT      : This is unacceptable! I want my money back!!
+MAP (x,y)   : valence=-0.42  activity=+0.90  dominance=n/a
+CONFIDENCE : 0.65
+LABEL      : anger
+ACTION     : ANSWER_EMPATHIC
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 8, 'matched_words': 2, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#5  14:15:07  source=scenario:M2
+INPUT      : I am furious. I will contact a lawyer if this is not solved today.
+MAP (x,y)   : valence=-0.56  activity=+0.55  dominance=n/a
+CONFIDENCE : 0.71
+LABEL      : anger
+ACTION     : ANSWER_EMPATHIC
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 14, 'matched_words': 4, 'negation_used': 'yes'}
+------------------------------------------------------------------------
+[14:15:27] SCENARIO P2 - Disappointed and tired customer
+------------------------------------------------------------------------
+#6  14:15:27  source=scenario:P2
+INPUT      : I am really disappointed with my last order.
+MAP (x,y)   : valence=-0.46  activity=-0.15  dominance=n/a
+CONFIDENCE : 0.65
+LABEL      : sadness
+ACTION     : ANSWER_EMPATHIC
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 8, 'matched_words': 2, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#7  14:15:29  source=scenario:P2
+INPUT      : I am tired of waiting for the replacement.
+MAP (x,y)   : valence=-0.45  activity=+0.12  dominance=n/a
+CONFIDENCE : 0.75
+LABEL      : frustration
+ACTION     : ANSWER_EMPATHIC
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 8, 'matched_words': 3, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#8  14:15:30  source=scenario:P2
+INPUT      : I do not think it will ever arrive.
+MAP (x,y)   : valence=-0.08  activity=+0.10  dominance=n/a
+CONFIDENCE : 0.55
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 8, 'matched_words': 1, 'negation_used': 'yes'}
+------------------------------------------------------------------------
+Session ended: 2026-11-18 14:15:42   messages: 8

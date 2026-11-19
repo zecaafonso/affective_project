@@ -1,0 +1,8 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-18 16:43:57
+Engine          : engine.engine.Engine
+Log file        : C:\Users\JoseAfonso\Desktop\affective_project\logs\session_20261118_164357.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[16:44:04] SCENARIO M1 - Calm customer with simple questions

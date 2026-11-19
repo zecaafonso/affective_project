@@ -1,0 +1,18 @@
+{
+  "id": "M1",
+  "title": "Calm customer with simple questions",
+  "company": "NovaShop (online electronics store)",
+  "description": "A customer asks routine questions and is polite.",
+  "expected_behavior": "Low activity, neutral to positive valence, simple answers; the last message should close the conversation positively.",
+  "messages": [
+    {
+      "text": "Hi, how long does delivery usually take?"
+    },
+    {
+      "text": "Thanks. And can I change my delivery address?"
+    },
+    {
+      "text": "Perfect, that is all I needed. Thank you!"
+    }
+  ]
+}

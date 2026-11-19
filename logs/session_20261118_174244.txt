@@ -1,0 +1,89 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-18 17:42:44
+Engine          : engine.engine.Engine
+Log file        : c:\Users\JoseAfonso\Desktop\affective_project\logs\session_20261118_174244.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[17:42:53] SCENARIO M1 - Calm customer with simple questions
+------------------------------------------------------------------------
+#1  17:42:53  source=scenario:M1
+INPUT      : Hi, how long does delivery usually take?
+MAP (x,y)   : valence=+0.10  activity=+0.07  dominance=n/a
+CONFIDENCE : 0.77
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 7, 'matched_words': 3, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#2  17:42:55  source=scenario:M1
+INPUT      : Thanks. And can I change my delivery address?
+MAP (x,y)   : valence=+0.23  activity=+0.15  dominance=n/a
+CONFIDENCE : 0.75
+LABEL      : joy
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 8, 'matched_words': 3, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#3  17:42:56  source=scenario:M1
+INPUT      : Perfect, that is all I needed. Thank you!
+MAP (x,y)   : valence=+0.78  activity=+0.60  dominance=n/a
+CONFIDENCE : 0.65
+LABEL      : joy
+ACTION     : CLOSE_POSITIVE
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 8, 'matched_words': 2, 'negation_used': 'no'}
+------------------------------------------------------------------------
+[17:43:24] SCENARIO M4 - Ambiguous, sarcastic and non-English messages
+------------------------------------------------------------------------
+#4  17:43:24  source=scenario:M4
+INPUT      : ok
+MAP (x,y)   : valence=+0.25  activity=-0.30  dominance=n/a
+CONFIDENCE : 0.90
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 1, 'matched_words': 1, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#5  17:43:25  source=scenario:M4
+INPUT      : whatever, do what you want
+MAP (x,y)   : valence=+0.00  activity=+0.20  dominance=n/a
+CONFIDENCE : 0.58
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 5, 'matched_words': 1, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#6  17:43:27  source=scenario:M4
+INPUT      : Great, another delay. Really great.
+MAP (x,y)   : valence=+0.40  activity=+0.55  dominance=n/a
+CONFIDENCE : 0.84
+LABEL      : joy
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 5, 'matched_words': 3, 'negation_used': 'no'}
+------------------------------------------------------------------------
+#7  17:43:28  source=scenario:M4
+INPUT      : It is not bad, thanks.
+MAP (x,y)   : valence=+0.59  activity=+0.40  dominance=n/a
+CONFIDENCE : 0.71
+LABEL      : joy
+ACTION     : CLOSE_POSITIVE
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thank you for contacting NovaShop support. How can I assist you further?
+DETAILS    : {'words_count': 5, 'matched_words': 2, 'negation_used': 'yes'}
+------------------------------------------------------------------------
+Session ended: 2026-11-18 17:43:28   messages: 7

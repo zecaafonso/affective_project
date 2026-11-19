@@ -1,0 +1,18 @@
+{
+  "id": "P4",
+  "title": "Negation and praise",
+  "company": "NovaShop (online electronics store)",
+  "description": "Messages that need negation handling.",
+  "expected_behavior": "\"not bad\" is mildly positive, \"not happy at all\" is negative.",
+  "messages": [
+    {
+      "text": "The delivery was not bad."
+    },
+    {
+      "text": "I am not happy at all with the packaging."
+    },
+    {
+      "text": "Still, the support team was great, thank you."
+    }
+  ]
+}

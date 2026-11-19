@@ -1,0 +1,24 @@
+{
+  "id": "M4",
+  "title": "Ambiguous, sarcastic and non-English messages",
+  "company": "NovaShop (online electronics store)",
+  "description": "Short, ambiguous, sarcastic and Portuguese messages.",
+  "expected_behavior": "The system should show lower confidence on ambiguous input, ask for clarification when it does not know, notice sarcasm, and handle the Portuguese messages.",
+  "messages": [
+    {
+      "text": "ok"
+    },
+    {
+      "text": "whatever, do what you want"
+    },
+    {
+      "text": "Great, another delay. Really great."
+    },
+    {
+      "text": "It is not bad, thanks."
+    },
+    {
+      "text": "Obrigado, ficou tudo resolvido."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "M3",
+  "title": "Explicit requests that must not be missed",
+  "company": "NovaShop (online electronics store)",
+  "description": "The customer asks for something specific and makes explicit requests.",
+  "expected_behavior": "Rules for explicit signals (asking for a person, legal threat) must win over the emotion estimate.",
+  "messages": [
+    {
+      "text": "Can you tell me how to return a product?"
+    },
+    {
+      "text": "I do not want to talk to a bot, please connect me with a human agent."
+    },
+    {
+      "text": "Thank you, but if this is not fixed I will go to the consumer protection authority."
+    }
+  ]
+}

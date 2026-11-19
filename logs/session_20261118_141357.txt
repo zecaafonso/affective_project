@@ -1,0 +1,65 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-18 14:13:57
+Engine          : engine.engine.Engine
+Log file        : C:\Users\JoseAfonso\Desktop\affective_project\logs\session_20261118_141357.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[14:13:57] SCENARIO M2 - Frustration that grows over the conversation
+------------------------------------------------------------------------
+#1  14:13:57  source=scenario:M2
+INPUT      : Hi, my order 4821 has not arrived yet.
+MAP (x,y)   : valence=+0.00  activity=+0.00  dominance=n/a
+CONFIDENCE : 0.30
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thanks for your message. How can I help?
+DETAILS    : {'words': 7}
+------------------------------------------------------------------------
+#2  14:13:57  source=scenario:M2
+INPUT      : It was supposed to be here three days ago.
+MAP (x,y)   : valence=+0.00  activity=+0.00  dominance=n/a
+CONFIDENCE : 0.30
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thanks for your message. How can I help?
+DETAILS    : {'words': 9}
+------------------------------------------------------------------------
+#3  14:13:57  source=scenario:M2
+INPUT      : Nobody has answered my two emails. This is really frustrating.
+MAP (x,y)   : valence=+0.00  activity=+0.00  dominance=n/a
+CONFIDENCE : 0.30
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thanks for your message. How can I help?
+DETAILS    : {'words': 10}
+------------------------------------------------------------------------
+#4  14:13:57  source=scenario:M2
+INPUT      : This is unacceptable! I want my money back!!
+MAP (x,y)   : valence=-0.80  activity=+0.30  dominance=n/a
+CONFIDENCE : 0.30
+LABEL      : frustration
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thanks for your message. How can I help?
+DETAILS    : {'words': 8}
+------------------------------------------------------------------------
+#5  14:13:57  source=scenario:M2
+INPUT      : I am furious. I will contact a lawyer if this is not solved today.
+MAP (x,y)   : valence=+0.00  activity=+0.00  dominance=n/a
+CONFIDENCE : 0.30
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : Thanks for your message. How can I help?
+DETAILS    : {'words': 14}
+------------------------------------------------------------------------
+Session ended: 2026-11-18 14:13:57   messages: 5

@@ -1,0 +1,24 @@
+{
+  "id": "M2",
+  "title": "Frustration that grows over the conversation",
+  "company": "NovaShop (online electronics store)",
+  "description": "The customer starts neutral and gets more and more upset about a late order.",
+  "expected_behavior": "Valence falls and activity rises message by message. The state over time must show it. The system should offer a human or escalate before the end.",
+  "messages": [
+    {
+      "text": "Hi, my order 4821 has not arrived yet."
+    },
+    {
+      "text": "It was supposed to be here three days ago."
+    },
+    {
+      "text": "Nobody has answered my two emails. This is really frustrating."
+    },
+    {
+      "text": "This is unacceptable! I want my money back!!"
+    },
+    {
+      "text": "I am furious. I will contact a lawyer if this is not solved today."
+    }
+  ]
+}

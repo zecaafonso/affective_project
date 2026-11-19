@@ -1,0 +1,18 @@
+{
+  "id": "P2",
+  "title": "Disappointed and tired customer",
+  "company": "NovaShop (online electronics store)",
+  "description": "Sad, low-activity negative messages.",
+  "expected_behavior": "Negative valence with LOW activity (sadness, not anger); empathic answers.",
+  "messages": [
+    {
+      "text": "I am really disappointed with my last order."
+    },
+    {
+      "text": "I am tired of waiting for the replacement."
+    },
+    {
+      "text": "I do not think it will ever arrive."
+    }
+  ]
+}
