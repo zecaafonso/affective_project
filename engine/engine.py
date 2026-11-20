@@ -1,45 +1,16 @@
-
 import json
 import os
 import re
 import math
 
-# Protótipos de emoções com base em valência, atividade e dominância
-EMOTION_PROTOTYPES = {
-    "joy":         ( 0.75,  0.55,  0.40),
-    "calm":        ( 0.55, -0.45,  0.20),
-    "anger":       (-0.75,  0.75,  0.65),  # Alta dominância (exigente/agressivo)
-    "fear":        (-0.70,  0.70, -0.65),  # Baixa dominância (inseguro/sem controlo)
-    "frustration": (-0.55,  0.35, -0.10),
-    "sadness":     (-0.65, -0.50, -0.50),
-}
-# Raio para considerar uma emoção como neutra
-NEUTRAL_RADIUS = 0.22
-
-
-NEGATIONS = {
-    "not", "no", "never", "dont", "don't", "cant", "can't", 
-    "wont", "won't", "isnt", "isn't", "wasnt", "wasn't", 
-    "didnt", "didn't", "doesnt", "doesn't", "neither", "nor", "nothing"
-}
-
-INTENSIFIERS = {
-    "very": 1.4,
-    "extremely": 1.8,
-    "super": 1.6,
-    "really": 1.4,
-    "so": 1.3,
-    "incredibly": 1.7,
-    "totally": 1.5,
-    "completely": 1.5,
-    "absolutely": 1.6,
-    "slightly": 0.5,
-    "somewhat": 0.6,
-    "barely": 0.4,
-    "hardly": 0.4,
-    "little": 0.6,
-    "bit": 0.6
-}
+from .vocabulary import (
+    EMOTION_PROTOTYPES,
+    HIGH_DOMINANCE_WORDS,
+    INTENSIFIERS,
+    LOW_DOMINANCE_WORDS,
+    NEGATIONS,
+    NEUTRAL_RADIUS,
+)
 
 
 class Engine:
@@ -70,8 +41,6 @@ class Engine:
         total_activity = 0.0
         ##para verifircar quantas palavras do texto estão no dataset, para calcular a confiança
         matched_words = 0
-        ##para contar (labels) para escolher a dominante
-       ## label_votes = {}  // tenho que apagar para a parte 2 funcionar
         ## para o caso de negação e intensificador
         negated = False
         multiplier = 1.0
@@ -95,13 +64,8 @@ class Engine:
                 lbl = entry["label"]
                 
                 # Aplicar negação (inverte a valência e atenua ligeiramente)
-                if negated: # tive q alterar
+                if negated:
                     v = -v * 0.8
-                    # inverte a etiqueta se foi negada
-                 #   if lbl in ("joy", "calm") and v < 0:
-                 #       lbl = "frustration"
-                 #   elif lbl in ("anger", "frustration", "sadness") and v > 0:
-                 #       lbl = "calm"
                     negated = False
                 
                 # Aplicar intensificador(maximiza a valência e atividade, mas não ultrapassa os limites de -1 a 1)
@@ -113,8 +77,6 @@ class Engine:
                 total_valence += v
                 total_activity += a
                 matched_words += 1
-                #tive q tirar igualmente e passar diretamente ao if de baixo
-             #   label_votes[lbl] = label_votes.get(lbl, 0) + abs(v) + 0.1
 
         # Calcular Valência e Atividade médias
         if matched_words > 0:
@@ -145,15 +107,10 @@ class Engine:
             coverage = matched_words / len(words)
             confidence = min(0.95, 0.45 + (coverage * 0.4) + min(0.15, matched_words * 0.05))
 
-        # Escolher o label dominante
-    #    if matched_words == 0 or (abs(valence) < 0.15 and abs(activity) < 0.2):
-    #        label = "neutral"
-    #    elif label_votes:
-    #        label = max(label_votes, key=label_votes.get)
-    #    else:
-    #        label = "neutral"
+        # Calcular Dominância (-1 a 1) para ativar o mapa 3D e melhorar a distinção de rótulos
+        dominance = self._estimate_dominance(text, words, valence, activity)
         # Escolher o label dominante usando a distância euclidiana
-        label = self._euclidean_distance(valence, activity)
+        label = self._euclidean_distance(valence, activity,dominance)
 
         self.history.append(valence)
 
@@ -171,6 +128,7 @@ class Engine:
         return {
             "valence": round(valence, 3),
             "activity": round(activity, 3),
+            "dominance": round(dominance, 3),
             "confidence": round(confidence, 3),
             "label": label,
             "action": action,
@@ -205,3 +163,31 @@ class Engine:
                 best_label = label
 
         return best_label
+
+    def _estimate_dominance(self, text, words, valence, activity):
+        score = 0.0
+
+        # 1. Pistas lexicais de controlo vs. submissão/incerteza
+        for word in words:
+            if word in HIGH_DOMINANCE_WORDS:
+                score += 0.35
+            elif word in LOW_DOMINANCE_WORDS:
+                score -= 0.30
+
+        # 2. Pistas de pontuação e maiúsculas
+        if text.count("!") > 0:
+            score += min(0.3, text.count("!") * 0.15)
+        if text.count("?") > 0:
+            score -= min(0.25, text.count("?") * 0.12)
+
+        alpha_chars = [c for c in text if c.isalpha()]
+        if len(alpha_chars) >= 4:
+            caps_ratio = sum(1 for c in alpha_chars if c.isupper()) / len(alpha_chars)
+            if caps_ratio > 0.6:
+                score += 0.35
+
+        # 3. Se não houver pistas fortes, usa uma base suave a partir da valência
+        if abs(score) < 0.05:
+            score = valence * 0.25
+
+        return max(-1.0, min(1.0, score))
