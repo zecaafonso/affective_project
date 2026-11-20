@@ -1,6 +1,21 @@
+
 import json
 import os
 import re
+import math
+
+# Protótipos de emoções com base em valência, atividade e dominância
+EMOTION_PROTOTYPES = {
+    "joy":         ( 0.75,  0.55,  0.40),
+    "calm":        ( 0.55, -0.45,  0.20),
+    "anger":       (-0.75,  0.75,  0.65),  # Alta dominância (exigente/agressivo)
+    "fear":        (-0.70,  0.70, -0.65),  # Baixa dominância (inseguro/sem controlo)
+    "frustration": (-0.55,  0.35, -0.10),
+    "sadness":     (-0.65, -0.50, -0.50),
+}
+# Raio para considerar uma emoção como neutra
+NEUTRAL_RADIUS = 0.22
+
 
 NEGATIONS = {
     "not", "no", "never", "dont", "don't", "cant", "can't", 
@@ -56,7 +71,7 @@ class Engine:
         ##para verifircar quantas palavras do texto estão no dataset, para calcular a confiança
         matched_words = 0
         ##para contar (labels) para escolher a dominante
-        label_votes = {}
+       ## label_votes = {}  // tenho que apagar para a parte 2 funcionar
         ## para o caso de negação e intensificador
         negated = False
         multiplier = 1.0
@@ -79,19 +94,17 @@ class Engine:
                 a = entry["activity"]
                 lbl = entry["label"]
                 
-                # Aplicar negação (inverte a valência e atenua ligeiramente,
-                # atenua-se porque a negação não é tão forte quanto a palavra original, e não ultrapassa os limites de -1 a 1
-                if negated:
+                # Aplicar negação (inverte a valência e atenua ligeiramente)
+                if negated: # tive q alterar
                     v = -v * 0.8
                     # inverte a etiqueta se foi negada
-                    if lbl in ("joy", "calm") and v < 0:
-                        lbl = "frustration"
-                    elif lbl in ("anger", "frustration", "sadness") and v > 0:
-                        lbl = "calm"
+                 #   if lbl in ("joy", "calm") and v < 0:
+                 #       lbl = "frustration"
+                 #   elif lbl in ("anger", "frustration", "sadness") and v > 0:
+                 #       lbl = "calm"
                     negated = False
                 
-                # Aplicar intensificador
-                # maximiza a valência e atividade,porque o intensificador aumenta a intensidade da palavra, e não ultrapassa os limites de -1 a 1
+                # Aplicar intensificador(maximiza a valência e atividade, mas não ultrapassa os limites de -1 a 1)
                 v = max(-1.0, min(1.0, v * multiplier)) 
                 if multiplier > 1.0:
                     a = max(-1.0, min(1.0, a * 1.2))
@@ -100,10 +113,10 @@ class Engine:
                 total_valence += v
                 total_activity += a
                 matched_words += 1
-                label_votes[lbl] = label_votes.get(lbl, 0) + abs(v) + 0.1
+                #tive q tirar igualmente e passar diretamente ao if de baixo
+             #   label_votes[lbl] = label_votes.get(lbl, 0) + abs(v) + 0.1
 
         # Calcular Valência e Atividade médias
-        # dividir pelo número de palavras correspondentes,porque se não tiver palavras correspondentes, valência e atividade serão 0
         if matched_words > 0:
             valence = max(-1.0, min(1.0, total_valence / matched_words))
             activity = max(-1.0, min(1.0, total_activity / matched_words))
@@ -111,14 +124,12 @@ class Engine:
             valence = 0.0
             activity = 0.0
 
-        # pontos de exclamação
-        # se houver pontos de exclamação, aumenta a atividade,em 0.15 por ponto de exclamação até um máximo de 0.4, e não ultrapassa 1.0)
+        #pontos de exclamação(se houver pontos de exclamação, aumenta a atividade) 
         exclamations = text.count("!")
         if exclamations > 0:
             activity = min(1.0, activity + min(0.4, exclamations * 0.15))
 
-        # letras maiúsculas 
-        # se mais de 60% das letras forem maiúsculas e houver pelo menos 4 letras, aumenta a atividade em 0.3, e não ultrapassa 1.0
+        # letras maiúsculas (se mais de 60% das letras forem maiúsculas e houver pelo menos 4 letras, aumenta a atividade)    
         alpha_chars = [c for c in text if c.isalpha()]
         if len(alpha_chars) >= 4:
             caps_ratio = sum(1 for c in alpha_chars if c.isupper()) / len(alpha_chars)
@@ -135,13 +146,14 @@ class Engine:
             confidence = min(0.95, 0.45 + (coverage * 0.4) + min(0.15, matched_words * 0.05))
 
         # Escolher o label dominante
-        # Se não houver palavras correspondentes ou se a valência e atividade forem muito próximas de zero, o label será "neutral". Caso contrário, o label será o que tiver mais votos
-        if matched_words == 0 or (abs(valence) < 0.15 and abs(activity) < 0.2):
-            label = "neutral"
-        elif label_votes:
-            label = max(label_votes, key=label_votes.get)
-        else:
-            label = "neutral"
+    #    if matched_words == 0 or (abs(valence) < 0.15 and abs(activity) < 0.2):
+    #        label = "neutral"
+    #    elif label_votes:
+    #        label = max(label_votes, key=label_votes.get)
+    #    else:
+    #        label = "neutral"
+        # Escolher o label dominante usando a distância euclidiana
+        label = self._euclidean_distance(valence, activity)
 
         self.history.append(valence)
 
@@ -171,14 +183,25 @@ class Engine:
             }
         }
 
-
-
-
-
-
-
-                
-
-
-
+# vamos usar a distancia euclidiana, onde qualquer ponto fora da zona neutra, calcula-se a distância euclidiana do ponto atual a cada protótipo e escolhe-se o mais próximo
     
+    def _euclidean_distance(self, valence, activity, dominance=None):
+        # 1. Verifica se está dentro da zona neutra (distância à origem)
+        if math.hypot(valence, activity) < NEUTRAL_RADIUS:
+            return "neutral"
+
+        # 2. Encontra o protótipo emocional mais próximo
+        best_label = "neutral"
+        best_dist = float("inf")
+
+        for label, (pv, pa, pd) in EMOTION_PROTOTYPES.items():
+            if dominance is None:
+                dist = math.hypot(valence - pv, activity - pa)
+            else:
+                dist = math.sqrt((valence - pv) ** 2 + (activity - pa) ** 2 + (dominance - pd) ** 2)
+
+            if dist < best_dist:
+                best_dist = dist
+                best_label = label
+
+        return best_label
