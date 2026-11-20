@@ -1,4 +1,4 @@
-# NovaShop Affective Assistant — Group XX
+# NovaShop Affective Assistant
 
 Engine of an affective customer-support assistant for **NovaShop**, an online electronics store.
 For every customer message the engine estimates the emotional state (valence, activity, dominance,
