@@ -63,12 +63,14 @@ class Engine:
                 a = entry["activity"]
                 lbl = entry["label"]
                 
-                # Aplicar negação (inverte a valência e atenua ligeiramente)
+                # Aplicar negação (inverte a valência e atenua ligeiramente,
+                # atenua-se porque a negação não é tão forte quanto a palavra original, e não ultrapassa os limites de -1 a 1
                 if negated:
                     v = -v * 0.8
                     negated = False
                 
-                # Aplicar intensificador(maximiza a valência e atividade, mas não ultrapassa os limites de -1 a 1)
+                # Aplicar intensificador
+                # maximiza a valência e atividade,porque o intensificador aumenta a intensidade da palavra, e não ultrapassa os limites de -1 a 1
                 v = max(-1.0, min(1.0, v * multiplier)) 
                 if multiplier > 1.0:
                     a = max(-1.0, min(1.0, a * 1.2))
@@ -79,6 +81,7 @@ class Engine:
                 matched_words += 1
 
         # Calcular Valência e Atividade médias
+        # dividir pelo número de palavras correspondentes,porque se não tiver palavras correspondentes, valência e atividade serão 0
         if matched_words > 0:
             valence = max(-1.0, min(1.0, total_valence / matched_words))
             activity = max(-1.0, min(1.0, total_activity / matched_words))
@@ -87,6 +90,7 @@ class Engine:
             activity = 0.0
 
         #pontos de exclamação(se houver pontos de exclamação, aumenta a atividade) 
+        # se houver pontos de exclamação, aumenta a atividade,em 0.15 por ponto de exclamação até um máximo de 0.4, e não ultrapassa 1.0)
         exclamations = text.count("!")
         if exclamations > 0:
             activity = min(1.0, activity + min(0.4, exclamations * 0.15))
