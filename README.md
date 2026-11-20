@@ -1,48 +1,152 @@
-# Affective Computing Project - student kit
+# NovaShop Affective Assistant — Group XX
 
-Everything is Python 3.9+ (standard library only; numpy is allowed). The interface is the **same for every group**.
+Engine of an affective customer-support assistant for **NovaShop**, an online electronics store.
+For every customer message the engine estimates the emotional state (valence, activity, dominance,
+confidence, label), keeps an emotional state over the conversation, and chooses one of six actions
+with a reply in English or Portuguese.
 
-## Run
-    python run_app.py                                     # the interface (needs tkinter)
-    python run_scenario.py scenarios/mandatory/M1_calm_faq.json   # same engine, no interface, prints a table
-    python tests/test_contract.py                         # checks that your engine respects the contract
+Built on the shared Affective Computing project kit. Only `engine/`, `tests/` and this README were
+changed; `harness/`, `run_app.py` and `run_scenario.py` are the original kit files.
 
-On Linux, if you get "No module named tkinter": `sudo apt install python3-tk`.
+## Group
 
-## What the interface shows
-* a **text input** field (Enter or Send); optional buttons to attach an audio file or an image (for groups that use voice or face);
-* a **2D affective map**: x = valence, y = activity. Every message is a numbered point, the last one is highlighted.
-  If your engine also returns `dominance`, the **3D view** checkbox is enabled (third axis drawn in perspective);
-* the conversation, the last estimate (valence, activity, dominance, label, action, flags) and the **confidence**;
-* an **expandable "Session log"** panel with every step: input, map values (x, y), confidence, label, action, flags,
-  latency, reply and your own `details`. The same log is written to `logs/session_<date>_<time>.txt`
-  (plain text, readable by anyone). "Save log as..." copies it elsewhere;
-* a **scenario selector** with "Play scenario" (messages are sent one by one) and "Reset session".
+| Topic | Expert |
+| --- | --- |
+| 1. Text perception | José Afonso |
+| 2. Affective model, map and optional channels | Luã Mariano |
+| 3. Decision, state over time and robustness | Filipe Matos|
+| 4. Software, interface, tests and demo | Daniela Rodrigues |
+| 5. Evaluation, data, ethics and report | Letícia Azevedo|
 
-## Where you work
-Only the folder `engine/` (start with `engine/engine.py`, read its docstring). **Do not edit `harness/`, `run_app.py` or
-`run_scenario.py`**: the teacher checks that they are unchanged and runs extra tests through the same interface.
+## Requirements
 
-## The engine contract
-`Engine.reset()` starts a new conversation. `Engine.process(text, audio_path=None, image_path=None)` returns a dict:
+* Python 3.9 or later. **Standard library only** — no packages to install (`requirements.txt` is intentionally empty).
+* `tkinter` for the interface. On Linux, if you get `No module named tkinter`: `sudo apt install python3-tk`.
+* No internet connection or online services are needed.
 
-| key | type | meaning |
+## How to run
+
+Run every command from this folder (the one that contains `run_app.py`). On Linux/macOS use `python3` if `python`
+is not Python 3.
+
+**Interface**
+
+    python run_app.py
+
+Type a message and press Enter, or pick a scenario and click **Play scenario**.
+Click **Reset session** before each new scenario: the engine remembers the conversation, so without a reset the
+state from the previous scenario carries over (and both end up in the same log file).
+
+**A scenario without the interface** (prints one line per message and writes a log):
+
+    python run_scenario.py scenarios/mandatory/M1_calm_faq.json
+
+The four mandatory scenarios are `M1_calm_faq`, `M2_growing_frustration`, `M3_explicit_requests` and
+`M4_ambiguity_and_robustness`; four practice scenarios are in `scenarios/practice/`.
+
+**Tests**
+
+    python -m unittest discover tests -v
+
+## How the engine works
+
+    text ──► engine.py ─────────────────────────────► policy.py ──────────────────► result dict
+             valence, activity, confidence,            state over time, rules,
+             dominance, label (topics 1 and 2)         action + reply (topic 3)
+
+| File | Role |
+| --- | --- |
+| `engine/engine.py` | `Engine` class required by the contract. `process()` estimates the emotion and hands the decision to the policy; `reset()` starts a new conversation. |
+| `engine/lexicon_dataset.json` | Lexicon of 747 English words, each with a valence, an activity and a label. |
+| `engine/vocabulary.py` | Negations, intensifiers, dominance cue words, emotion prototypes and the neutral radius. |
+| `engine/policy.py` | `ConversationManager`: emotional state over the conversation and the decision rules. Its thresholds are at the top of the file. |
+
+### 1. Perception (`engine.py`)
+
+* **Valence and activity:** average of the lexicon words found in the message. A negation (`not`, `never`, ...)
+  flips the valence of the next known word; an intensifier (`very`, `extremely`, ...) multiplies it.
+  Exclamation marks and text in capitals raise the activity.
+* **Confidence:** based on how many words of the message are in the lexicon (0.25 when none are).
+* **Dominance:** assertive words (`demand`, `refund`, `now`, ...), `!` and capitals raise it; hesitant words
+  (`please`, `sorry`, `confused`, ...) and `?` lower it. It enables the 3D view of the map.
+* **Label:** `neutral` inside a small radius around the origin; otherwise the nearest emotion prototype
+  (joy, calm, anger, fear, frustration, sadness) in valence–activity–dominance space.
+
+### 2. Decision (`policy.py`)
+
+The policy keeps a smoothed emotional state (exponential moving average of valence and activity), counts
+negative messages in a row and clarification requests in a row, and remembers whether a human was already
+offered. Rules are checked in order and the first one that matches wins:
+
+1. Answer to a previous offer of a human: "yes" → `ESCALATE`, "no" → `ANSWER`.
+2. Legal threat or formal complaint (EN/PT) → `ESCALATE`.
+3. Request for a human → `OFFER_HUMAN` (or `ESCALATE` if the customer is very upset or a human was already offered).
+4. Accumulated frustration (very negative and agitated state, or 3 negative messages in a row) → `ESCALATE`.
+5. A clear goodbye ("thanks", "obrigado, ficou tudo resolvido") → `CLOSE_POSITIVE`, even with low confidence.
+6. Uncertain message (low confidence, very short or ambiguous) → `ASK_CLARIFICATION`, at most once in a row;
+   then `OFFER_HUMAN`.
+7. Negative message or state → `ANSWER_EMPATHIC`; after 2 negative messages in a row → `OFFER_HUMAN`.
+8. Otherwise → `ANSWER`, with a short FAQ reply (delivery time, address change, returns, order status).
+
+**Robustness:** sarcasm ("Great, another delay") is treated as negative with lower confidence; Portuguese is
+detected and answered in Portuguese; a message in another language gets a clarification request in both
+languages. The policy never rewrites the estimated emotion — when in doubt it only lowers the confidence and
+chooses a safer action.
+
+Audio and image files are accepted by `process()` but not used (no voice or face channel).
+
+## Engine contract
+
+`Engine.reset()` starts a new conversation. `Engine.process(text, audio_path=None, image_path=None)` returns:
+
+| Key | Type | Meaning |
 | --- | --- | --- |
-| `valence` | float -1..1 | negative to positive (map x) |
-| `activity` | float -1..1 | deactivated to activated (map y); `arousal` is accepted as a synonym |
-| `confidence` | float 0..1 | how much you trust the estimate |
-| `label` | str | neutral, anger, fear, frustration, sadness, joy, calm, ... |
+| `valence` | float −1..1 | negative to positive (map x) |
+| `activity` | float −1..1 | calm to agitated (map y) |
+| `dominance` | float −1..1 | submissive to in control (3D view) |
+| `confidence` | float 0..1 | how much the estimate can be trusted |
+| `label` | str | `neutral`, `joy`, `calm`, `anger`, `fear`, `frustration` or `sadness` |
 | `action` | str | `ANSWER`, `ANSWER_EMPATHIC`, `ASK_CLARIFICATION`, `OFFER_HUMAN`, `ESCALATE`, `CLOSE_POSITIVE` |
-| `reply` | str | what the assistant says |
-| `dominance` | float -1..1, optional | enables the 3D view |
-| `flags`, `details` | list, dict, optional | anything useful; `details` is written to the log |
+| `reply` | str | what the assistant says (English or Portuguese) |
+| `flags` | list | see below |
+| `details` | dict | see below; written to the session log |
 
-Problems with your output (missing keys, wrong action name, values outside the range) are shown in the interface and in the log.
+**Flags:** `lang_pt`, `lang_unknown`, `sarcasm_suspected`, `ambiguous_or_short`, `low_confidence`,
+`human_request`, `legal_or_escalation_threat`, `accumulated_frustration`.
 
-## Scenarios
-`scenarios/mandatory/` has the **4 scenarios that must appear in your video demo** (M1 to M4). `scenarios/practice/`
-has 4 more for testing. All groups use the same ones. Each file says what behavior is expected. The teacher will also
-test your code with additional messages that you do not see.
+**Details:**
 
-## Optional: voice and face (extra points)
-`assets/audio/` has sample audio files. Your engine receives `audio_path` / `image_path` when a file is attached.
+| Key | Meaning |
+| --- | --- |
+| `words_count`, `matched_words` | words in the message and how many are in the lexicon |
+| `negation_used` | whether a negation word appears |
+| `lang` | `en`, `pt` or `unknown` |
+| `sarcasm`, `valence_adjusted` | sarcasm detected, and the valence the policy used after that adjustment |
+| `state_valence`, `state_activity` | emotional state over the conversation |
+| `neg_streak`, `clarify_streak` | negative messages / clarification requests in a row |
+| `offered_human` | whether a human was already offered in this conversation |
+| `rule` | name of the decision rule that chose the action (e.g. `legal_threat`, `negative_streak_offer`) |
+| `turn` | message number in the conversation |
+
+## Tests
+
+| File | What it checks |
+| --- | --- |
+| `tests/test_contract.py` | Kit test: the output respects the contract for unusual inputs, and `reset()` clears the state. |
+| `tests/test_policy.py` | One test per decision rule, calling the policy directly with fixed values (independent of the lexicon). |
+| `tests/test_engine.py` | Negation, intensifiers and dominance, plus the expected actions in each mandatory scenario (M1–M4). |
+
+## Session logs
+
+Every session writes a plain-text log to `logs/session_<date>_<time>.txt`: input, map values, confidence,
+label, action, flags, latency, reply and `details` for every message. In the interface, the **Session log**
+panel shows the same content and **Save log as...** copies it elsewhere. The log of the demo session is
+`logs/<demo_log_file>.txt`.
+
+## Known limits
+
+* The lexicon is English only. Portuguese messages are detected and answered in Portuguese, but their emotion
+  is mostly estimated as neutral with low confidence.
+* Sarcasm detection is keyword-based and catches only simple patterns.
+* Dominance affects the label and the 3D map, but not the decision.
+* The engine cannot tell when a new scenario starts; use **Reset session** in the interface.
