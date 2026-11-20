@@ -11,6 +11,7 @@ from .vocabulary import (
     NEGATIONS,
     NEUTRAL_RADIUS,
 )
+from .policy import ConversationManager
 
 
 class Engine:
@@ -32,6 +33,8 @@ class Engine:
         if not hasattr(self, "lexicon"):
             self._load_lexicon()
         self.history = []
+        # Tópico 3: memória da conversa (estado acumulado, streaks, ofertas de humano)
+        self.policy = ConversationManager()
 
     def process(self, text, audio_path=None, image_path=None):
         # Extrair palavras do texto, convertendo para minúsculas e removendo pontuação
@@ -63,12 +66,14 @@ class Engine:
                 a = entry["activity"]
                 lbl = entry["label"]
                 
-                # Aplicar negação (inverte a valência e atenua ligeiramente)
+                # Aplicar negação (inverte a valência e atenua ligeiramente,
+                # atenua-se porque a negação não é tão forte quanto a palavra original, e não ultrapassa os limites de -1 a 1
                 if negated:
                     v = -v * 0.8
                     negated = False
                 
-                # Aplicar intensificador(maximiza a valência e atividade, mas não ultrapassa os limites de -1 a 1)
+                # Aplicar intensificador
+                # maximiza a valência e atividade,porque o intensificador aumenta a intensidade da palavra, e não ultrapassa os limites de -1 a 1
                 v = max(-1.0, min(1.0, v * multiplier)) 
                 if multiplier > 1.0:
                     a = max(-1.0, min(1.0, a * 1.2))
@@ -79,6 +84,7 @@ class Engine:
                 matched_words += 1
 
         # Calcular Valência e Atividade médias
+        # dividir pelo número de palavras correspondentes,porque se não tiver palavras correspondentes, valência e atividade serão 0
         if matched_words > 0:
             valence = max(-1.0, min(1.0, total_valence / matched_words))
             activity = max(-1.0, min(1.0, total_activity / matched_words))
@@ -87,6 +93,7 @@ class Engine:
             activity = 0.0
 
         #pontos de exclamação(se houver pontos de exclamação, aumenta a atividade) 
+        # se houver pontos de exclamação, aumenta a atividade,em 0.15 por ponto de exclamação até um máximo de 0.4, e não ultrapassa 1.0)
         exclamations = text.count("!")
         if exclamations > 0:
             activity = min(1.0, activity + min(0.4, exclamations * 0.15))
@@ -114,16 +121,17 @@ class Engine:
 
         self.history.append(valence)
 
-        # Acredito que esta parte seja do topico 3 
-        action = "ANSWER"
-        if valence <= -0.6 and activity >= 0.5:
-            action = "ESCALATE"
-        elif valence <= -0.3:
-            action = "ANSWER_EMPATHIC"
-        elif confidence < 0.3:
-            action = "ASK_CLARIFICATION"
-        elif valence >= 0.5:
-            action = "CLOSE_POSITIVE"
+        # Tópico 3: a política decide a acção e escreve a resposta, com base no estado da conversa
+        action, reply, confidence, flags, policy_details = self.policy.update_and_decide(
+            text, valence, activity, confidence, label
+        )
+
+        details = {
+            "words_count": len(words),
+            "matched_words": matched_words,
+            "negation_used": "yes" if any(w in NEGATIONS for w in words) else "no",
+        }
+        details.update(policy_details)
 
         return {
             "valence": round(valence, 3),
@@ -132,13 +140,9 @@ class Engine:
             "confidence": round(confidence, 3),
             "label": label,
             "action": action,
-            "reply": "Thank you for contacting NovaShop support. How can I assist you further?",
-            "flags": [],
-            "details": {
-                "words_count": len(words),
-                "matched_words": matched_words,
-                "negation_used": "yes" if any(w in NEGATIONS for w in words) else "no"
-            }
+            "reply": reply,
+            "flags": flags,
+            "details": details,
         }
 
 # vamos usar a distancia euclidiana, onde qualquer ponto fora da zona neutra, calcula-se a distância euclidiana do ponto atual a cada protótipo e escolhe-se o mais próximo
