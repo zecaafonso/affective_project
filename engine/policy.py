@@ -2,7 +2,7 @@
 Tópico 3: Gestão de Estado, Robustez e Política de Decisão (NovaShop).
 
 COMO LER ESTE FICHEIRO (de cima para baixo):
-  1. LIMIARES        -> números que podes afinar (e justificar no relatório)
+  1. LIMIARES        -> números que podes afinar
   2. LISTAS/PADRÕES  -> palavras e frases que o módulo procura no texto
   3. ConversationManager
        reset()             -> começa uma conversa nova (apaga a memória)
@@ -345,6 +345,12 @@ class ConversationManager:
         if has_human_request:
             flags.append("human_request")
 
+        # Condições para um fecho positivo (usadas com ou sem confiança alta)
+        closing_ok = (has_closing_cue and eff_valence >= CLOSE_VALENCE_THRESHOLD
+                      and "?" not in text_lower and not has_closing_blocker
+                      and not sarcastic and not is_ambiguous
+                      and self.state_valence > STATE_NEG_THRESHOLD)
+
         # A parte a seguir serve para quando o chat pergunta se quer ajuda humana
         # Isto faz com que o chat fique à espera de uma resposta (positiva ou negativa) à pergunta, e conforme a resposta, re-adapta (ou não) o assunto
         was_pending = self.pending_offer
@@ -399,6 +405,11 @@ class ConversationManager:
             action, rule = "ESCALATE", "accumulated_frustration_uncertain"
             flags.append("accumulated_frustration")
 
+        # Caso a mensagem seja incerta mas seja claramente um fecho (ex.: "Obrigado, ficou tudo resolvido"
+        # com palavras fora do léxico) -> Fechar positivo em vez de pedir esclarecimento
+        elif uncertain and closing_ok:
+            action, rule = "CLOSE_POSITIVE", "closing_low_confidence"
+
         # Caso a mensagem seja incerta pedimos esclarecimento
         # Caso se atinja o limite de esclarecimentos -> Oferecer uma pessoa
         # Caso também já se tenha perguntado isso -> Escalar
@@ -424,9 +435,7 @@ class ConversationManager:
                 action, rule = "ANSWER_EMPATHIC", "negative"
 
         # Caso tenha usado termos para fechar a conversa e esteja tudo bem -> Fechar positivo
-        elif (has_closing_cue and eff_valence >= CLOSE_VALENCE_THRESHOLD
-              and "?" not in text_lower and not has_closing_blocker
-              and self.state_valence > STATE_NEG_THRESHOLD):
+        elif closing_ok:
             action, rule = "CLOSE_POSITIVE", "closing"
 
         # Qualquer outra mensagem que não se adeque às regras anteriores -> Answer
