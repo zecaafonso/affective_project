@@ -2,7 +2,7 @@
 Tópico 3: Gestão de Estado, Robustez e Política de Decisão (NovaShop).
 
 COMO LER ESTE FICHEIRO (de cima para baixo):
-  1. LIMIARES        -> números que podes afinar (e justificar no relatório)
+  1. LIMIARES        -> números que podes afinar
   2. LISTAS/PADRÕES  -> palavras e frases que o módulo procura no texto
   3. ConversationManager
        reset()             -> começa uma conversa nova (apaga a memória)
