@@ -17,9 +17,10 @@ class PolicyTests(unittest.TestCase):
     def setUp(self):
         self.cm = ConversationManager()
 
-    def say(self, text, valence=0.0, activity=0.0, confidence=0.9, label="neutral"):
+    def say(self, text, valence=0.0, activity=0.0, confidence=0.9, label="neutral", dominance=0.0):
         """Envia uma mensagem e devolve um dict com o resultado (mais fácil de ler nos testes)."""
-        action, reply, conf, flags, details = self.cm.update_and_decide(text, valence, activity, confidence, label)
+        action, reply, conf, flags, details = self.cm.update_and_decide(
+            text, valence, activity, confidence, label, dominance=dominance)
         return {"action": action, "reply": reply, "confidence": conf, "flags": flags, "details": details}
 
     def test_legal_threat_escalates_even_when_calm(self):
@@ -44,6 +45,29 @@ class PolicyTests(unittest.TestCase):
             "This keeps getting worse and worse for me every day",
         )]
         self.assertEqual(actions, ["ANSWER_EMPATHIC", "OFFER_HUMAN", "ESCALATE"])
+
+    def test_dominant_anger_escalates_early(self):
+        msgs = ("My order arrived broken", "I demand a refund right now")
+        # Negativo, agitado e dominante: escala logo à 2.ª mensagem negativa
+        actions = [self.say(t, valence=-0.5, activity=0.6, dominance=0.9) for t in msgs]
+        self.assertEqual([r["action"] for r in actions], ["ANSWER_EMPATHIC", "ESCALATE"])
+        self.assertEqual(actions[1]["details"]["rule"], "dominant_anger")
+        self.assertIn("dominant_anger", actions[1]["flags"])
+        # As mesmas mensagens com dominância neutra não escalam tão cedo
+        self.cm.reset()
+        actions = [self.say(t, valence=-0.5, activity=0.6)["action"] for t in msgs]
+        self.assertEqual(actions, ["ANSWER_EMPATHIC", "OFFER_HUMAN"])
+
+    def test_helpless_customer_offered_human(self):
+        # Negativo e com dominância baixa (impotente): oferece um humano logo na 1.ª mensagem
+        r = self.say("I am worried my payment failed", valence=-0.5, activity=0.2, dominance=-0.6)
+        self.assertEqual(r["action"], "OFFER_HUMAN")
+        self.assertEqual(r["details"]["rule"], "helpless_offer")
+        self.assertIn("helpless_user", r["flags"])
+        # A mesma mensagem com dominância neutra recebe só uma resposta empática
+        self.cm.reset()
+        self.assertEqual(self.say("I am worried my payment failed", valence=-0.5, activity=0.2)["action"],
+                         "ANSWER_EMPATHIC")
 
     def test_ambiguous_message_asks_clarification_only_once(self):
         self.assertEqual(self.say("ok")["action"], "ASK_CLARIFICATION")

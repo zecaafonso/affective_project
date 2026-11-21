@@ -123,7 +123,7 @@ class Engine:
 
         # Tópico 3: a política decide a acção e escreve a resposta, com base no estado da conversa
         action, reply, confidence, flags, policy_details = self.policy.update_and_decide(
-            text, valence, activity, confidence, label
+            text, valence, activity, confidence, label, dominance=dominance
         )
 
         details = {
