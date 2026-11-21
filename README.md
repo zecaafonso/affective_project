@@ -68,13 +68,14 @@ The four mandatory scenarios are `M1_calm_faq`, `M2_growing_frustration`, `M3_ex
   Exclamation marks and text in capitals raise the activity.
 * **Confidence:** based on how many words of the message are in the lexicon (0.25 when none are).
 * **Dominance:** assertive words (`demand`, `refund`, `now`, ...), `!` and capitals raise it; hesitant words
-  (`please`, `sorry`, `confused`, ...) and `?` lower it. It enables the 3D view of the map.
+  (`please`, `sorry`, `confused`, ...) and `?` lower it. It enables the 3D view of the map and is also passed to
+  the policy (rules 5 and 8 below).
 * **Label:** `neutral` inside a small radius around the origin; otherwise the nearest emotion prototype
   (joy, calm, anger, fear, frustration, sadness) in valence–activity–dominance space.
 
 ### 2. Decision (`policy.py`)
 
-The policy keeps a smoothed emotional state (exponential moving average of valence and activity), counts
+The policy keeps a smoothed emotional state (exponential moving average of valence, activity and dominance), counts
 negative messages in a row and clarification requests in a row, and remembers whether a human was already
 offered. Rules are checked in order and the first one that matches wins:
 
@@ -82,11 +83,14 @@ offered. Rules are checked in order and the first one that matches wins:
 2. Legal threat or formal complaint (EN/PT) → `ESCALATE`.
 3. Request for a human → `OFFER_HUMAN` (or `ESCALATE` if the customer is very upset or a human was already offered).
 4. Accumulated frustration (very negative and agitated state, or 3 negative messages in a row) → `ESCALATE`.
-5. A clear goodbye ("thanks", "obrigado, ficou tudo resolvido") → `CLOSE_POSITIVE`, even with low confidence.
-6. Uncertain message (low confidence, very short or ambiguous) → `ASK_CLARIFICATION`, at most once in a row;
+5. Dominant anger (negative message, agitated and dominant state, 2 negative messages in a row) → `ESCALATE`,
+   one message earlier than rule 4.
+6. A clear goodbye ("thanks", "obrigado, ficou tudo resolvido") → `CLOSE_POSITIVE`, even with low confidence.
+7. Uncertain message (low confidence, very short or ambiguous) → `ASK_CLARIFICATION`, at most once in a row;
    then `OFFER_HUMAN`.
-7. Negative message or state → `ANSWER_EMPATHIC`; after 2 negative messages in a row → `OFFER_HUMAN`.
-8. Otherwise → `ANSWER`, with a short FAQ reply (delivery time, address change, returns, order status).
+8. Negative message or state → `ANSWER_EMPATHIC`; after 2 negative messages in a row → `OFFER_HUMAN`.
+   If the customer seems helpless (low dominance state) and no human was offered yet → `OFFER_HUMAN` at once.
+9. Otherwise → `ANSWER`, with a short FAQ reply (delivery time, address change, returns, order status).
 
 **Robustness:** sarcasm ("Great, another delay") is treated as negative with lower confidence; Portuguese is
 detected and answered in Portuguese; a message in another language gets a clarification request in both
@@ -112,7 +116,7 @@ Audio and image files are accepted by `process()` but not used (no voice or face
 | `details` | dict | see below; written to the session log |
 
 **Flags:** `lang_pt`, `lang_unknown`, `sarcasm_suspected`, `ambiguous_or_short`, `low_confidence`,
-`human_request`, `legal_or_escalation_threat`, `accumulated_frustration`.
+`human_request`, `legal_or_escalation_threat`, `accumulated_frustration`, `dominant_anger`, `helpless_user`.
 
 **Details:**
 
@@ -122,7 +126,7 @@ Audio and image files are accepted by `process()` but not used (no voice or face
 | `negation_used` | whether a negation word appears |
 | `lang` | `en`, `pt` or `unknown` |
 | `sarcasm`, `valence_adjusted` | sarcasm detected, and the valence the policy used after that adjustment |
-| `state_valence`, `state_activity` | emotional state over the conversation |
+| `state_valence`, `state_activity`, `state_dominance` | emotional state over the conversation |
 | `neg_streak`, `clarify_streak` | negative messages / clarification requests in a row |
 | `offered_human` | whether a human was already offered in this conversation |
 | `rule` | name of the decision rule that chose the action (e.g. `legal_threat`, `negative_streak_offer`) |
@@ -148,5 +152,6 @@ panel shows the same content and **Save log as...** copies it elsewhere. The log
 * The lexicon is English only. Portuguese messages are detected and answered in Portuguese, but their emotion
   is mostly estimated as neutral with low confidence.
 * Sarcasm detection is keyword-based and catches only simple patterns.
-* Dominance affects the label and the 3D map, but not the decision.
+* Dominance comes from a short list of cue words, `!`, `?` and capitals, so it is a rough estimate; in the
+  decision it is used only by the dominant-anger and helpless-customer rules.
 * The engine cannot tell when a new scenario starts; use **Reset session** in the interface.
