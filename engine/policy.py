@@ -1,21 +1,5 @@
-"""
-Tópico 3: Gestão de Estado, Robustez e Política de Decisão (NovaShop).
+# Tópico 3: Gestão de Estado, Robustez e Política de Decisão
 
-COMO LER ESTE FICHEIRO (de cima para baixo):
-  1. LIMIARES        -> números que podes afinar
-  2. LISTAS/PADRÕES  -> palavras e frases que o módulo procura no texto
-  3. ConversationManager
-       reset()             -> começa uma conversa nova (apaga a memória)
-       update_and_decide() -> O CORAÇÃO: recebe os números dos tópicos 1/2,
-                              atualiza a memória e escolhe UMA das 6 ações
-       _generate_reply()   -> escreve a resposta (EN/PT) para a ação escolhida
-
-IDEIA CENTRAL:
-  Os tópicos 1 e 2 ESTIMAM (valência, atividade, confiança, flags).
-  Este módulo DECIDE. Nunca reescreve a emoção estimada: quando há dúvida
-  (sarcasmo, língua desconhecida, mensagem curta) fica mais CAUTELOSO
-  (baixa a confiança e escolhe uma ação mais segura).
-"""
 import re
 
 # ---------------------------------------------------------------------------
@@ -23,7 +7,8 @@ import re
 # ---------------------------------------------------------------------------
 # 1. Valência mede se o User está triste (-1) ou contente (1)
 # 2. Activação mede se o User está calmo (-1) ou agitado (1)
-# 3. "Estado Emocional" mede ao longo das interações o estado do User
+# 3. Dominância mede o quanto o User tem poder sobre a situação (1) ou está impotente (-1)
+# 4. "Estado Emocional" mede ao longo das interações o estado do User
 # Aqui vamos definir os limites destas matrizes:
 
 # VALÊNCIA LIMITES
@@ -38,6 +23,13 @@ NEUTRAL_RESET_THRESHOLD = -0.10
 # Queremos manter isto em valores baixos (calmo)
 ACTIVITY_HIGH_THRESHOLD = 0.45              # atividade alta
 ACTIVITY_VERY_HIGH_THRESHOLD = 0.70         # atividade muito alta
+
+# DOMINÂNCIA LIMITES
+# Entendemos que pretendemos manter estes valores perto de 0, de forma a que o User sinta que tudo acontece de forma fluída
+# Dominância alta + valência negativa + atividade alta = raiva (User exigente) -> escalar mais cedo
+# Dominância baixa + valência negativa = impotência (User sem controlo) -> oferecer humano mais cedo
+DOMINANCE_HIGH_THRESHOLD = 0.45             # dominância alta
+DOMINANCE_LOW_THRESHOLD = -0.30             # dominância baixa
 
 # ESTADO EMOCIONAL ACUMULADO LIMITES
 # estado emocional acumulado  abaixo disto = User "em baixo"
@@ -210,6 +202,7 @@ class ConversationManager:
         self.turns = []
         self.state_valence = 0.0            # valência acumulada (EMA)
         self.state_activity = 0.0           # atividade acumulada (EMA)
+        self.state_dominance = 0.0          # dominância acumulada (EMA)
         self.state_ready = False            # já houve alguma mensagem informativa?
         self.neg_streak = 0                 # nº de mensagens negativas seguidas
         self.clarify_streak = 0             # nº de pedidos de clarificação seguidos
@@ -257,18 +250,16 @@ class ConversationManager:
     # ------------------------------------------------------------------
 
     # 0 - Começamos por ver aquilo que recebemos do sistema, para decidir o que responder.
-    def update_and_decide(self, text, valence, activity, confidence, label, input_flags=None):
-        """
-        Entrada: os números estimados (valence, activity, confidence, label) e,
-                 opcionalmente, input_flags (ex.: {"sarcasm"}) vindas dos tópicos 1/2.
-        Saída:   (action, reply, confidence_ajustada, flags, details)
-        """
+    def update_and_decide(self, text, valence, activity, confidence, label, input_flags=None, dominance=0.0):
+
         clean_text = text.strip()
         text_lower = clean_text.lower()
         words = re.findall(WORD_RE, text_lower)
         words_set = set(words)
         input_flags = set(input_flags or [])
         flags = []
+        # Se o tópico 1/2 não enviar dominância, assume-se neutra (0.0)
+        dominance = 0.0 if dominance is None else dominance
 
         # ------------------------------------------------------------------
         # 1 - Perceber a língua
@@ -319,6 +310,7 @@ class ConversationManager:
             if not self.state_ready:
                 self.state_valence = eff_valence
                 self.state_activity = activity
+                self.state_dominance = dominance
                 self.state_ready = True
             else:
                 w = EMA_NEW_WEIGHT
@@ -326,6 +318,8 @@ class ConversationManager:
                     (1 - w) * self.state_valence
                 self.state_activity = w * activity + \
                     (1 - w) * self.state_activity
+                self.state_dominance = w * dominance + \
+                    (1 - w) * self.state_dominance
 
             if eff_valence <= VALENCE_NEG_THRESHOLD:
                 self.neg_streak += 1
@@ -396,6 +390,16 @@ class ConversationManager:
             action, rule = "ESCALATE", "accumulated_frustration"
             flags.append("accumulated_frustration")
 
+        # Caso a mensagem seja clara, negativa e o User esteja agitado e com dominância alta (raiva/exigência)
+        # e já tenha havido mensagens negativas anteriores -> Escalar mais cedo (sem esperar pelo limite da sequência)
+        elif ((not uncertain)
+              and eff_valence <= VALENCE_NEG_THRESHOLD
+              and self.state_activity >= ACTIVITY_HIGH_THRESHOLD
+              and self.state_dominance >= DOMINANCE_HIGH_THRESHOLD
+              and self.neg_streak >= NEG_STREAK_OFFER):
+            action, rule = "ESCALATE", "dominant_anger"
+            flags.append("dominant_anger")
+
         # Caso existam mensagens ambiguas e já tivermos várias mensagens negativas -> Escalar
         elif uncertain and (self.neg_streak >= NEG_STREAK_ESCALATE
                             or (self.state_ready and self.state_valence <= VALENCE_ESCALATE_THRESHOLD
@@ -431,6 +435,11 @@ class ConversationManager:
                 action, rule = "OFFER_HUMAN", "negative_streak_offer"
             elif self.neg_streak >= NEG_STREAK_OFFER and self.offered_human:
                 action, rule = "ESCALATE", "negative_streak_after_offer"
+            # Caso o User esteja negativo e com dominância baixa (impotente) e ainda não tenha sido oferecida uma pessoa
+            # -> Oferecer uma pessoa logo, em vez de só responder com empatia
+            elif self.state_dominance <= DOMINANCE_LOW_THRESHOLD and not self.offered_human:
+                action, rule = "OFFER_HUMAN", "helpless_offer"
+                flags.append("helpless_user")
             else:
                 action, rule = "ANSWER_EMPATHIC", "negative"
 
@@ -465,6 +474,7 @@ class ConversationManager:
             "valence": valence,
             "eff_valence": round(eff_valence, 3),
             "activity": activity,
+            "dominance": dominance,
             "state_valence": round(self.state_valence, 3),
             "action": action,
             "rule": rule,
@@ -477,6 +487,7 @@ class ConversationManager:
             "valence_adjusted": round(eff_valence, 3),
             "state_valence": round(self.state_valence, 3),
             "state_activity": round(self.state_activity, 3),
+            "state_dominance": round(self.state_dominance, 3),
             "neg_streak": self.neg_streak,
             "clarify_streak": self.clarify_streak,
             "offered_human": self.offered_human,
