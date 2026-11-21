@@ -56,15 +56,14 @@ SARCASM_CONFIDENCE_CAP = 0.60
 # caso o sistema não detecte a língua, deve ter uma confiança máxima de N
 UNKNOWN_LANG_CONFIDENCE_CAP = 0.40
 
-# O seguinte "WORD_RE" serve para individualizar palavras numa frase, de forma a se poder analisar palavra-a-palavra.
-# Neste caso, números não seriam observados
-WORD_RE = r"[a-zà-ÿ']+"
-
 # ---------------------------------------------------------------------------
 # PROCURA POR KEYWORDS
 # ---------------------------------------------------------------------------
 
 # Entendemos que existem keywords que devem levar a ações automaticamente, quer para chamar uma pessoa, como para escalar
+# O seguinte "WORD_RE" serve para individualizar palavras numa frase, de forma a se poder analisar palavra-a-palavra.
+# Neste caso, números não seriam observados
+WORD_RE = r"[a-zà-ÿ']+"
 
 # 1 - Ameaça legal -> escalar logo
 # Aqui procuramos palavras em EN ou PT, que pareçam de alguma forma mostrar que o User quer de imediato escalar a situação.
