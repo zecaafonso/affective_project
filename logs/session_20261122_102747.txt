@@ -1,0 +1,43 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-22 10:27:47
+Engine          : engine.engine.Engine
+Log file        : /home/daniela/code/MIAA/affective_project/affective_project/logs/session_20261122_102747.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[10:27:56] SCENARIO M3 - Explicit requests that must not be missed
+------------------------------------------------------------------------
+#1  10:27:56  source=scenario:M3
+INPUT      : Can you tell me how to return a product?
+MAP (x,y)   : valence=-0.17  activity=+0.17  dominance=-0.12
+CONFIDENCE : 0.64
+LABEL      : frustration
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : You can return any item within 30 days through the 'My Orders' section on NovaShop.
+DETAILS    : {'words_count': 9, 'matched_words': 2, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.175, 'state_valence': -0.175, 'state_activity': 0.175, 'state_dominance': -0.12, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': False, 'rule': 'default', 'turn': 1}
+------------------------------------------------------------------------
+#2  10:27:57  source=scenario:M3
+INPUT      : I do not want to talk to a bot, please connect me with a human agent.
+MAP (x,y)   : valence=-0.16  activity=+0.35  dominance=-0.04
+CONFIDENCE : 0.75
+LABEL      : frustration
+ACTION     : OFFER_HUMAN
+FLAGS      : human_request
+LATENCY    : 0 ms
+REPLY      : I understand your frustration and would be glad to connect you with a human support agent right away. Would you like that?
+DETAILS    : {'words_count': 16, 'matched_words': 6, 'negation_used': 'yes', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.158, 'state_valence': -0.167, 'state_activity': 0.254, 'state_dominance': -0.084, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': True, 'rule': 'human_request', 'turn': 2}
+------------------------------------------------------------------------
+#3  10:27:59  source=scenario:M3
+INPUT      : Thank you, but if this is not fixed I will go to the consumer protection authority.
+MAP (x,y)   : valence=+0.09  activity=+0.38  dominance=+0.02
+CONFIDENCE : 0.60
+LABEL      : frustration
+ACTION     : ESCALATE
+FLAGS      : legal_or_escalation_threat
+LATENCY    : 0 ms
+REPLY      : I understand how serious this is. I am escalating your case immediately to a senior NovaShop specialist.
+DETAILS    : {'words_count': 16, 'matched_words': 2, 'negation_used': 'yes', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': 0.09, 'state_valence': -0.052, 'state_activity': 0.308, 'state_dominance': -0.036, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': True, 'rule': 'legal_threat', 'turn': 3}
+------------------------------------------------------------------------
+Session ended: 2026-11-22 10:28:38   messages: 3

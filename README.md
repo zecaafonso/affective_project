@@ -1,12 +1,9 @@
 # NovaShop Affective Assistant
 
 Engine of an affective customer-support assistant for **NovaShop**, an online electronics store.
-For every customer message the engine estimates the emotional state (valence, activity, dominance,
-confidence, label), keeps an emotional state over the conversation, and chooses one of six actions
-with a reply in English or Portuguese.
+For every customer message the engine estimates the emotional state (valence, activity, dominance, confidence, label), keeps an emotional state over the conversation, and chooses one of six actions with a reply in English or Portuguese.
 
-Built on the shared Affective Computing project kit. Only `engine/`, `tests/` and this README were
-changed; `harness/`, `run_app.py` and `run_scenario.py` are the original kit files.
+Built on the shared Affective Computing project kit. Only `engine/`, `tests/` and this README were changed; `harness/`, `run_app.py` and `run_scenario.py` are the original kit files.
 
 ## Group
 
@@ -26,8 +23,7 @@ changed; `harness/`, `run_app.py` and `run_scenario.py` are the original kit fil
 
 ## How to run
 
-Run every command from this folder (the one that contains `run_app.py`). On Linux/macOS use `python3` if `python`
-is not Python 3.
+Run every command from this folder (the one that contains `run_app.py`). On Linux/macOS use `python3` if `python` is not Python 3.
 
 **Interface**
 
@@ -68,16 +64,15 @@ The four mandatory scenarios are `M1_calm_faq`, `M2_growing_frustration`, `M3_ex
   Exclamation marks and text in capitals raise the activity.
 * **Confidence:** based on how many words of the message are in the lexicon (0.25 when none are).
 * **Dominance:** assertive words (`demand`, `refund`, `now`, ...), `!` and capitals raise it; hesitant words
-  (`please`, `sorry`, `confused`, ...) and `?` lower it. It enables the 3D view of the map and is also passed to
-  the policy (rules 5 and 8 below).
+  (`please`, `sorry`, `confused`, ...) and `?` lower it. It enables the 3D view of the map and is also passed to the policy (rules 5 and 8 below).
 * **Label:** `neutral` inside a small radius around the origin; otherwise the nearest emotion prototype
   (joy, calm, anger, fear, frustration, sadness) in valence–activity–dominance space.
 
 ### 2. Decision (`policy.py`)
 
 The policy keeps a smoothed emotional state (exponential moving average of valence, activity and dominance), counts
-negative messages in a row and clarification requests in a row, and remembers whether a human was already
-offered. Rules are checked in order and the first one that matches wins:
+negative messages in a row and clarification requests in a row, and remembers whether a human was already offered. 
+Rules are checked in order and the first one that matches wins:
 
 1. Answer to a previous offer of a human: "yes" → `ESCALATE`, "no" → `ANSWER`.
 2. Legal threat or formal complaint (EN/PT) → `ESCALATE`.
@@ -86,16 +81,14 @@ offered. Rules are checked in order and the first one that matches wins:
 5. Dominant anger (negative message, agitated and dominant state, 2 negative messages in a row) → `ESCALATE`,
    one message earlier than rule 4.
 6. A clear goodbye ("thanks", "obrigado, ficou tudo resolvido") → `CLOSE_POSITIVE`, even with low confidence.
-7. Uncertain message (low confidence, very short or ambiguous) → `ASK_CLARIFICATION`, at most once in a row;
-   then `OFFER_HUMAN`.
+7. Uncertain message (low confidence, very short or ambiguous) → `ASK_CLARIFICATION`, at most once in a row; then `OFFER_HUMAN`.
 8. Negative message or state → `ANSWER_EMPATHIC`; after 2 negative messages in a row → `OFFER_HUMAN`.
    If the customer seems helpless (low dominance state) and no human was offered yet → `OFFER_HUMAN` at once.
 9. Otherwise → `ANSWER`, with a short FAQ reply (delivery time, address change, returns, order status).
 
-**Robustness:** sarcasm ("Great, another delay") is treated as negative with lower confidence; Portuguese is
-detected and answered in Portuguese; a message in another language gets a clarification request in both
-languages. The policy never rewrites the estimated emotion — when in doubt it only lowers the confidence and
-chooses a safer action.
+**Robustness:** sarcasm ("Great, another delay") is treated as negative with lower confidence.
+Portuguese is detected and answered in Portuguese; a message in another language gets a clarification request in both languages. 
+The policy never rewrites the estimated emotion. When in doubt it only lowers the confidence and chooses a safer action.
 
 Audio and image files are accepted by `process()` but not used (no voice or face channel).
 
@@ -115,8 +108,7 @@ Audio and image files are accepted by `process()` but not used (no voice or face
 | `flags` | list | see below |
 | `details` | dict | see below; written to the session log |
 
-**Flags:** `lang_pt`, `lang_unknown`, `sarcasm_suspected`, `ambiguous_or_short`, `low_confidence`,
-`human_request`, `legal_or_escalation_threat`, `accumulated_frustration`, `dominant_anger`, `helpless_user`.
+**Flags:** `lang_pt`, `lang_unknown`, `sarcasm_suspected`, `ambiguous_or_short`, `low_confidence`, `human_request`, `legal_or_escalation_threat`, `accumulated_frustration`, `dominant_anger`, `helpless_user`.
 
 **Details:**
 
@@ -144,14 +136,19 @@ Audio and image files are accepted by `process()` but not used (no voice or face
 
 Every session writes a plain-text log to `logs/session_<date>_<time>.txt`: input, map values, confidence,
 label, action, flags, latency, reply and `details` for every message. In the interface, the **Session log**
-panel shows the same content and **Save log as...** copies it elsewhere. The log of the demo session is
-`logs/<demo_log_file>.txt`.
+panel shows the same content and **Save log as...** copies it elsewhere. The demo video has one log per
+mandatory scenario (the session was reset between scenarios):
+
+| Scenario | Log file |
+| --- | --- |
+| M1 - Calm customer with simple questions | `logs/session_20261122_102524.txt` |
+| M2 - Frustration that grows over the conversation | `logs/session_20261122_102639.txt` |
+| M3 - Explicit requests that must not be missed | `logs/session_20261122_102747.txt` |
+| M4 - Ambiguous, sarcastic and non-English messages | `logs/session_20261122_102838.txt` |
 
 ## Known limits
 
-* The lexicon is English only. Portuguese messages are detected and answered in Portuguese, but their emotion
-  is mostly estimated as neutral with low confidence.
+* The lexicon is English only. Portuguese messages are detected and answered in Portuguese, but their emotion is mostly estimated as neutral with low confidence.
 * Sarcasm detection is keyword-based and catches only simple patterns.
-* Dominance comes from a short list of cue words, `!`, `?` and capitals, so it is a rough estimate; in the
-  decision it is used only by the dominant-anger and helpless-customer rules.
+* Dominance comes from a short list of cue words, `!`, `?` and capitals, so it is a rough estimate; in the decision it is used only by the dominant-anger and helpless-customer rules.
 * The engine cannot tell when a new scenario starts; use **Reset session** in the interface.

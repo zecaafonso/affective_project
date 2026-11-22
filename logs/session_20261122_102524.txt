@@ -1,0 +1,43 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-22 10:25:24
+Engine          : engine.engine.Engine
+Log file        : /home/daniela/code/MIAA/affective_project/affective_project/logs/session_20261122_102524.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[10:25:52] SCENARIO M1 - Calm customer with simple questions
+------------------------------------------------------------------------
+#1  10:25:52  source=scenario:M1
+INPUT      : Hi, how long does delivery usually take?
+MAP (x,y)   : valence=+0.10  activity=+0.07  dominance=-0.12
+CONFIDENCE : 0.77
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 2 ms
+REPLY      : Standard NovaShop delivery takes 2 to 4 business days.
+DETAILS    : {'words_count': 7, 'matched_words': 3, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': 0.1, 'state_valence': 0.1, 'state_activity': 0.067, 'state_dominance': -0.12, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': False, 'rule': 'default', 'turn': 1}
+------------------------------------------------------------------------
+#2  10:25:54  source=scenario:M1
+INPUT      : Thanks. And can I change my delivery address?
+MAP (x,y)   : valence=+0.23  activity=+0.15  dominance=-0.12
+CONFIDENCE : 0.75
+LABEL      : calm
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : You can update your delivery address in your NovaShop account before the order is dispatched.
+DETAILS    : {'words_count': 8, 'matched_words': 3, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': 0.233, 'state_valence': 0.16, 'state_activity': 0.104, 'state_dominance': -0.12, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': False, 'rule': 'default', 'turn': 2}
+------------------------------------------------------------------------
+#3  10:25:55  source=scenario:M1
+INPUT      : Perfect, that is all I needed. Thank you!
+MAP (x,y)   : valence=+0.78  activity=+0.60  dominance=+0.15
+CONFIDENCE : 0.65
+LABEL      : joy
+ACTION     : CLOSE_POSITIVE
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : You're very welcome! I'm glad everything is sorted. Thank you for shopping with NovaShop!
+DETAILS    : {'words_count': 8, 'matched_words': 2, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': 0.775, 'state_valence': 0.437, 'state_activity': 0.327, 'state_dominance': 0.002, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': False, 'rule': 'closing', 'turn': 3}
+------------------------------------------------------------------------
+Session ended: 2026-11-22 10:26:39   messages: 3

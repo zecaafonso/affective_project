@@ -1,0 +1,65 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-22 10:28:38
+Engine          : engine.engine.Engine
+Log file        : /home/daniela/code/MIAA/affective_project/affective_project/logs/session_20261122_102838.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[10:28:49] SCENARIO M4 - Ambiguous, sarcastic and non-English messages
+------------------------------------------------------------------------
+#1  10:28:49  source=scenario:M4
+INPUT      : ok
+MAP (x,y)   : valence=+0.25  activity=-0.30  dominance=+0.06
+CONFIDENCE : 0.30
+LABEL      : calm
+ACTION     : ASK_CLARIFICATION
+FLAGS      : lang_unknown, ambiguous_or_short, low_confidence
+LATENCY    : 0 ms
+REPLY      : I'm not sure I understood. Could you rephrase it in English or Portuguese? / Não tenho a certeza de ter percebido. Pode reformular em português ou inglês?
+DETAILS    : {'words_count': 1, 'matched_words': 1, 'negation_used': 'no', 'lang': 'unknown', 'sarcasm': False, 'valence_adjusted': 0.25, 'state_valence': 0.0, 'state_activity': 0.0, 'state_dominance': 0.0, 'neg_streak': 0, 'clarify_streak': 1, 'offered_human': False, 'rule': 'uncertain_ask', 'turn': 1}
+------------------------------------------------------------------------
+#2  10:28:51  source=scenario:M4
+INPUT      : whatever, do what you want
+MAP (x,y)   : valence=+0.00  activity=+0.20  dominance=+0.35
+CONFIDENCE : 0.30
+LABEL      : neutral
+ACTION     : OFFER_HUMAN
+FLAGS      : ambiguous_or_short
+LATENCY    : 0 ms
+REPLY      : I understand your frustration and would be glad to connect you with a human support agent right away. Would you like that?
+DETAILS    : {'words_count': 5, 'matched_words': 1, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': 0.0, 'state_valence': 0.0, 'state_activity': 0.0, 'state_dominance': 0.0, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': True, 'rule': 'uncertain_offer', 'turn': 2}
+------------------------------------------------------------------------
+#3  10:28:52  source=scenario:M4
+INPUT      : Great, another delay. Really great.
+MAP (x,y)   : valence=+0.40  activity=+0.55  dominance=+0.10
+CONFIDENCE : 0.60
+LABEL      : joy
+ACTION     : ANSWER_EMPATHIC
+FLAGS      : sarcasm_suspected
+LATENCY    : 0 ms
+REPLY      : I'm really sorry for the frustration this has caused. Please share your order number so I can check the shipment status right away.
+DETAILS    : {'words_count': 5, 'matched_words': 3, 'negation_used': 'no', 'lang': 'en', 'sarcasm': True, 'valence_adjusted': -0.4, 'state_valence': -0.4, 'state_activity': 0.553, 'state_dominance': 0.1, 'neg_streak': 1, 'clarify_streak': 0, 'offered_human': True, 'rule': 'negative', 'turn': 3}
+------------------------------------------------------------------------
+#4  10:28:54  source=scenario:M4
+INPUT      : It is not bad, thanks.
+MAP (x,y)   : valence=+0.59  activity=+0.40  dominance=+0.15
+CONFIDENCE : 0.71
+LABEL      : joy
+ACTION     : CLOSE_POSITIVE
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : You're very welcome! I'm glad everything is sorted. Thank you for shopping with NovaShop!
+DETAILS    : {'words_count': 5, 'matched_words': 2, 'negation_used': 'yes', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': 0.59, 'state_valence': 0.045, 'state_activity': 0.484, 'state_dominance': 0.121, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': True, 'rule': 'closing', 'turn': 4}
+------------------------------------------------------------------------
+#5  10:28:55  source=scenario:M4
+INPUT      : Obrigado, ficou tudo resolvido.
+MAP (x,y)   : valence=+0.00  activity=+0.00  dominance=+0.00
+CONFIDENCE : 0.25
+LABEL      : neutral
+ACTION     : CLOSE_POSITIVE
+FLAGS      : lang_pt, low_confidence
+LATENCY    : 0 ms
+REPLY      : Fico muito contente por ter ajudado! Obrigado por escolher a NovaShop e até à próxima.
+DETAILS    : {'words_count': 4, 'matched_words': 0, 'negation_used': 'no', 'lang': 'pt', 'sarcasm': False, 'valence_adjusted': 0.0, 'state_valence': 0.045, 'state_activity': 0.484, 'state_dominance': 0.121, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': True, 'rule': 'closing_low_confidence', 'turn': 5}
+------------------------------------------------------------------------
+Session ended: 2026-11-22 10:29:23   messages: 5

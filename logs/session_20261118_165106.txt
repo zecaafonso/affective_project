@@ -1,6 +1,0 @@
-AFFECTIVE COMPUTING PROJECT - SESSION LOG
-Session started : 2026-11-18 16:51:06
-Engine          : engine.engine.Engine
-Log file        : C:\Users\JoseAfonso\Desktop\affective_project\logs\session_20261118_165106.txt
-This is a plain text file. Every message, the map values (x = valence, y = activity),
-the confidence and the chosen action are written below in order.

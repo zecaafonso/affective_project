@@ -1,0 +1,65 @@
+AFFECTIVE COMPUTING PROJECT - SESSION LOG
+Session started : 2026-11-22 10:26:39
+Engine          : engine.engine.Engine
+Log file        : /home/daniela/code/MIAA/affective_project/affective_project/logs/session_20261122_102639.txt
+This is a plain text file. Every message, the map values (x = valence, y = activity),
+the confidence and the chosen action are written below in order.
+------------------------------------------------------------------------
+[10:26:48] SCENARIO M2 - Frustration that grows over the conversation
+------------------------------------------------------------------------
+#1  10:26:48  source=scenario:M2
+INPUT      : Hi, my order 4821 has not arrived yet.
+MAP (x,y)   : valence=-0.01  activity=+0.12  dominance=-0.00
+CONFIDENCE : 0.83
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : I am checking the status of your order #4821 right away.
+DETAILS    : {'words_count': 7, 'matched_words': 4, 'negation_used': 'yes', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.005, 'state_valence': -0.005, 'state_activity': 0.125, 'state_dominance': -0.001, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': False, 'rule': 'default', 'turn': 1}
+------------------------------------------------------------------------
+#2  10:26:49  source=scenario:M2
+INPUT      : It was supposed to be here three days ago.
+MAP (x,y)   : valence=-0.10  activity=+0.10  dominance=-0.03
+CONFIDENCE : 0.54
+LABEL      : neutral
+ACTION     : ANSWER
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : I'm here to help with your NovaShop inquiry. Could you share a few more details?
+DETAILS    : {'words_count': 9, 'matched_words': 1, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.1, 'state_valence': -0.048, 'state_activity': 0.114, 'state_dominance': -0.012, 'neg_streak': 0, 'clarify_streak': 0, 'offered_human': False, 'rule': 'default', 'turn': 2}
+------------------------------------------------------------------------
+#3  10:26:51  source=scenario:M2
+INPUT      : Nobody has answered my two emails. This is really frustrating.
+MAP (x,y)   : valence=-0.77  activity=+0.58  dominance=-0.19
+CONFIDENCE : 0.63
+LABEL      : frustration
+ACTION     : ANSWER_EMPATHIC
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : I'm really sorry for the frustration this has caused. I'm here to help with your NovaShop inquiry. Could you share a few more details?
+DETAILS    : {'words_count': 10, 'matched_words': 2, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.765, 'state_valence': -0.371, 'state_activity': 0.326, 'state_dominance': -0.093, 'neg_streak': 1, 'clarify_streak': 0, 'offered_human': False, 'rule': 'negative', 'turn': 3}
+------------------------------------------------------------------------
+#4  10:26:52  source=scenario:M2
+INPUT      : This is unacceptable! I want my money back!!
+MAP (x,y)   : valence=-0.42  activity=+0.90  dominance=+1.00
+CONFIDENCE : 0.65
+LABEL      : anger
+ACTION     : OFFER_HUMAN
+FLAGS      : -
+LATENCY    : 0 ms
+REPLY      : I understand your frustration and would be glad to connect you with a human support agent right away. Would you like that?
+DETAILS    : {'words_count': 8, 'matched_words': 2, 'negation_used': 'no', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.425, 'state_valence': -0.395, 'state_activity': 0.584, 'state_dominance': 0.399, 'neg_streak': 2, 'clarify_streak': 0, 'offered_human': True, 'rule': 'negative_streak_offer', 'turn': 4}
+------------------------------------------------------------------------
+#5  10:26:54  source=scenario:M2
+INPUT      : I am furious. I will contact a lawyer if this is not solved today.
+MAP (x,y)   : valence=-0.56  activity=+0.55  dominance=-0.14
+CONFIDENCE : 0.71
+LABEL      : frustration
+ACTION     : ESCALATE
+FLAGS      : legal_or_escalation_threat
+LATENCY    : 0 ms
+REPLY      : I understand how serious this is. I am escalating your case immediately to a senior NovaShop specialist.
+DETAILS    : {'words_count': 14, 'matched_words': 4, 'negation_used': 'yes', 'lang': 'en', 'sarcasm': False, 'valence_adjusted': -0.565, 'state_valence': -0.472, 'state_activity': 0.569, 'state_dominance': 0.156, 'neg_streak': 3, 'clarify_streak': 0, 'offered_human': True, 'rule': 'legal_threat', 'turn': 5}
+------------------------------------------------------------------------
+Session ended: 2026-11-22 10:27:47   messages: 5
