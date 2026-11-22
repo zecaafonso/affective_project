@@ -1,0 +1,41 @@
+NOVASHOP | AVALIAÇÃO SAM (exploratória)
+Mensagens: 28 | Avaliadores: 5
+Concordância total de rótulos (5/5): 25.0%
+Rótulos por maioria (>=3/5): 25/28
+Accuracy: 0.5200
+Macro F1 (todas as 7 classes): 0.4776
+
+Relatório por classe:
+              precision    recall  f1-score   support
+
+     neutral       0.50      0.50      0.50         6
+         joy       0.50      0.67      0.57         3
+        calm       0.50      0.67      0.57         3
+     sadness       0.00      0.00      0.00         2
+        fear       1.00      0.33      0.50         3
+       anger       1.00      0.50      0.67         2
+ frustration       0.44      0.67      0.53         6
+
+    accuracy                           0.52        25
+   macro avg       0.56      0.48      0.48        25
+weighted avg       0.55      0.52      0.50        25
+
+Matriz de confusão (linhas humanas, colunas sistema):
+             neutral  joy  calm  sadness  fear  anger  frustration
+neutral            3    0     2        0     0      0            1
+joy                1    2     0        0     0      0            0
+calm               0    1     2        0     0      0            0
+sadness            1    0     0        0     0      0            1
+fear               0    0     0        0     1      0            2
+anger              0    0     0        0     0      1            1
+frustration        1    1     0        0     0      0            4
+
+VALENCE: Spearman rho=0.7986, p=3.524e-07, MAE=0.3262, desvio padrão médio entre avaliadores (SAM 1-9)=1.008
+
+AROUSAL: Spearman rho=0.6253, p=0.0003733, MAE=0.3430, desvio padrão médio entre avaliadores (SAM 1-9)=0.740
+
+DOMINANCE: Spearman rho=0.4384, p=0.01961, MAE=0.3861, desvio padrão médio entre avaliadores (SAM 1-9)=0.731
+
+Nota: as 28 mensagens provêm exclusivamente dos 8 cenários originais; mensagens no mesmo cenário podem estar correlacionadas.
+As métricas descrevem este pequeno conjunto, não demonstram generalização. Correlação não é concordância exata.
+SAM Arousal foi comparado com o campo Activity do sistema.

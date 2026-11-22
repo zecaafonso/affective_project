@@ -3,13 +3,13 @@
 Engine of an affective customer-support assistant for **NovaShop**, an online electronics store.
 For every customer message the engine estimates the emotional state (valence, activity, dominance, confidence, label), keeps an emotional state over the conversation, and chooses one of six actions with a reply in English or Portuguese.
 
-Built on the shared Affective Computing project kit. Only `engine/`, `tests/` and this README were changed; `harness/`, `run_app.py` and `run_scenario.py` are the original kit files.
+Built on the shared Affective Computing project kit. Only `engine/`, `tests/`, `evaluation/` and this README were added or changed; `harness/`, `run_app.py` and `run_scenario.py` are the original kit files.
 
 ## Group
 
 | Topic | Expert |
 | --- | --- |
-| 1. Text perception | José Afonso |
+| 1. Text perception | José Afonso Monteiro |
 | 2. Affective model, map and optional channels | Luã Mariano |
 | 3. Decision, state over time and robustness | Filipe Matos|
 | 4. Software, interface, tests and demo | Daniela Rodrigues |
@@ -17,7 +17,9 @@ Built on the shared Affective Computing project kit. Only `engine/`, `tests/` an
 
 ## Requirements
 
-* Python 3.9 or later. **Standard library only** — no packages to install (`requirements.txt` is intentionally empty).
+* Python 3.9 or later. The app, the engine and the tests use the **standard library only** — nothing to install to run them.
+* The evaluation script (`evaluation/`) is the only part that needs extra packages (pandas, openpyxl, scipy, scikit-learn,
+  matplotlib), listed in `requirements.txt`: `pip install -r requirements.txt`. It is not needed to run the app.
 * `tkinter` for the interface. On Linux, if you get `No module named tkinter`: `sudo apt install python3-tk`.
 * No internet connection or online services are needed.
 
@@ -145,6 +147,24 @@ mandatory scenario (the session was reset between scenarios):
 | M2 - Frustration that grows over the conversation | `logs/session_20261122_102639.txt` |
 | M3 - Explicit requests that must not be missed | `logs/session_20261122_102747.txt` |
 | M4 - Ambiguous, sarcastic and non-English messages | `logs/session_20261122_102838.txt` |
+
+## Evaluation (SAM ratings)
+
+Run from this folder (needs the packages in `requirements.txt`):
+
+    pip install -r requirements.txt
+    python evaluation/calcular_metricas_sam_5_avaliadores.py
+
+| File | Role |
+| --- | --- |
+| `evaluation/NovaShop_SAM_5_Avaliadores.xlsx` | 28 messages from the 8 scenarios. Sheets `Avaliador_1`…`Avaliador_5`: SAM valence, arousal, dominance (1–9) and an emotion label from each rater. Sheet `Sistema`: the engine's output for each message (reset between scenarios). |
+| `evaluation/calcular_metricas_sam_5_avaliadores.py` | Checks that every sheet is complete, takes the majority label (≥3 of 5 raters) and the mean SAM rating mapped to −1..1, and compares them with the engine. |
+| `evaluation/Resultados_NovaShop/resumo_metricas.txt` | Accuracy, macro F1, per-class report, confusion matrix; Spearman ρ, p-value and MAE per dimension; spread between raters. |
+| `evaluation/Resultados_NovaShop/resultados_avaliacao.xlsx` | Sheets `Resultados_Detalhados` (one row per message, human vs system values and errors), `Matriz_Confusao` and `Erros` (error analysis: messages where the human majority label differs from the engine's label). |
+| `evaluation/Resultados_NovaShop/*.png` | Figures for the report: confusion matrix, F1 per emotion, mean human SAM vs system per dimension. |
+
+SAM arousal is compared with the engine's `activity`. Messages from the same conversation are not independent,
+so the metrics describe this small set and are exploratory.
 
 ## Known limits
 
